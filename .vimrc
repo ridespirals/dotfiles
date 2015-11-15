@@ -75,8 +75,8 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 execute pathogen#infect()
 
 " enable CtrlP extension?
-set runtimepath^=/Users/John/vimfiles/bundle/ctrlp.vim
+" set runtimepath^=/Users/John/vimfiles/bundle/ctrlp.vim
 
 " change where swapfiles go
 "set directory=/Users/John/vimfiles/swapfiles//
-cd \hg
+"cd /projects/
