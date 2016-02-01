@@ -8,6 +8,7 @@ set showmode " display current mode
 set laststatus=2 " always show status line
 set fileformat=unix " set unix line endings
 set history=1000 " increase history from 20 to 1000
+set autoindent
 
 " set leader to <Space>
 let mapleader=" "
