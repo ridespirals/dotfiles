@@ -3,6 +3,7 @@ set relativenumber " relative line numbers
 set number " actualy line number for current line
 set hlsearch " highlight search 
 set incsearch " progressive search 
+set expandtab " tabs -> spaces
 set tabstop=4 " set tab width
 set showmode " display current mode
 set laststatus=2 " always show status line
