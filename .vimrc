@@ -3,12 +3,14 @@ set relativenumber " relative line numbers
 set number " actualy line number for current line
 set hlsearch " highlight search 
 set incsearch " progressive search 
+set expandtab " tabs -> spaces
 set tabstop=4 " set tab width
 set showmode " display current mode
 set laststatus=2 " always show status line
 set fileformat=unix " set unix line endings
 set history=1000 " increase history from 20 to 1000
 set ignorecase
+set autoindent
 
 " set leader to <Space>
 let mapleader=" "
@@ -87,8 +89,8 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 execute pathogen#infect()
 
 " enable CtrlP extension?
-set runtimepath^=/Users/John/vimfiles/bundle/ctrlp.vim
+" set runtimepath^=/Users/John/vimfiles/bundle/ctrlp.vim
 
 " change where swapfiles go
 "set directory=/Users/John/vimfiles/swapfiles//
-cd \hg
+"cd /projects/
