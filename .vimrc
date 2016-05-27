@@ -8,6 +8,7 @@ set showmode " display current mode
 set laststatus=2 " always show status line
 set fileformat=unix " set unix line endings
 set history=1000 " increase history from 20 to 1000
+set ignorecase
 
 " set leader to <Space>
 let mapleader=" "
@@ -21,6 +22,17 @@ nnoremap : :
 set backspace=2 " allow backspacing in insert mode over previously-written text
 let g:netrw_liststyle=3 " make default :Explore style nicer
 
+" splits - window
+nmap <leader>sw<left>	:topleft vnew<CR>
+nmap <leader>sw<right>	:botright vnew<CR>
+nmap <leader>sw<up>		:topleft new<CR>
+nmap <leader>sw<down>	:botright new<CR>
+
+" splits - buffer
+nmap <leader>s<left>	:leftabove vnew<CR>
+nmap <leader>s<right>	:rightbelow vnew<CR>
+nmap <leader>s<up>		:leftabove new<CR>
+nmap <leader>s<dowN>	:rightbelow new<CR>
 
 " disable arrow keys
 noremap <Up> <Nop>
