@@ -1,9 +1,9 @@
-alias ls='ls -l'
+alias ls='ls -AGFoh'
 
 # ls with colors and all files
 #alias ls='ls -laG'
 
-alias bb='echo "Updating homebrew..." && brew update && echo "Upgrading formulae" && brew upgrade && echo "System is up to date."\n\n'
+alias bb='echo "Updating homebrew..." && brew update && echo "Upgrading formulae" && brew upgrade && echo "System is up to date."'
 
 # sbin in path (for homebrew)
 #export PATH='/usr/local/sbin:$PATH'
