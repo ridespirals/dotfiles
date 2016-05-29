@@ -14,4 +14,4 @@ alias gs='git status'
 alias a='git add'
 alias c='git commit --verbose'
 alias push='git push'
-l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+#l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
