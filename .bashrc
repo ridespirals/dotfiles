@@ -1,3 +1,5 @@
+export PATH="/usr/local/sbin:$PATH"
+
 alias ls='ls -AGFoh'
 
 # ls with colors and all files
