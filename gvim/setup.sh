@@ -1,5 +1,5 @@
 # run with bash or conemu
-mkdir -p ~/vimfiles/autoload ~/vimfiles/bundle && \
+mkdir -p ~/vimfiles/autoload ~/vimfiles/bundle
 curl -LSso ~/vimfiles/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 # add to _vimrc
