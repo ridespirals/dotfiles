@@ -1,0 +1,36 @@
+colorscheme zenburn
+
+set lines=38 columns=130
+set scrolloff=10 " number of lines to show around cursor
+set guifont=Consolas:h14:cANSI
+set relativenumber " relative line numbers
+set number " actual line number for current line
+set hlsearch " highlight search
+set incsearch " incremental search
+set expandtab " tabs -> spaces
+set tabstop=4 " tab width
+set showmode " display current mode
+set laststatus=2 " always show status line
+set backspace=2 " allow backspacing in insert mode over previously written text
+set ignorecase " ignore case when searching
+set autoindent " auto indent
+set nobackup " no backup
+set noswapfile " no swap file
+set clipboard^=unnamed " clipboard integration
+
+syntax on
+
+nnoremap <C-Space> :Explore<Enter>
+
+" remap ; => :
+nnoremap ; :
+nnoremap : : 
+
+let g:netrw_banner = 0
+let g:netrw_liststyle=3 " make default :Explore style nicer
+
+if has("gui_running")
+    " turn off menu and toolbar
+    set guioptions-=T
+    set guioptions-=m
+end
