@@ -1,6 +1,6 @@
 colorscheme zenburn
 
-set lines=38 columns=130
+set lines=38 columns=150
 set scrolloff=10 " number of lines to show around cursor
 set guifont=Consolas:h14:cANSI
 set relativenumber " relative line numbers
@@ -24,7 +24,7 @@ nnoremap <C-Space> :Explore<Enter>
 
 " remap ; => :
 nnoremap ; :
-nnoremap : :
+"nnoremap : :
 
 let g:netrw_banner = 0
 let g:netrw_liststyle=3 " make default :Explore style nicer
@@ -37,3 +37,12 @@ end
 
 " auto brackets
 inoremap { {<CR>}<Esc>O<TAB>
+
+" show whitespace chars
+set listchars=tab:>~,trail:.,nbsp:.,eol:$
+set list
+
+" pathogen
+execute pathogen#infect()
+filetype plugin indent on
+
