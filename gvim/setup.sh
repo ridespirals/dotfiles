@@ -11,3 +11,5 @@ curl -LSso ~/vimfiles/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 git clone https://github.com/vim-airline/vim-airline ~/vimfiles/bundle/vim-airline
 # remember to run :Helptags to generate help tags
 
+# good dotfile
+# https://github.com/BjRo/dotfiles/blob/master/.vimrc
