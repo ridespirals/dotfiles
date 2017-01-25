@@ -34,3 +34,6 @@ if has("gui_running")
     set guioptions-=T
     set guioptions-=m
 end
+
+" auto brackets
+inoremap { {<CR>}<Esc>O<TAB>
