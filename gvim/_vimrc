@@ -1,8 +1,8 @@
 colorscheme zenburn
 
-set lines=38 columns=150
+set lines=45 columns=180
 set scrolloff=10 " number of lines to show around cursor
-set guifont=Consolas:h14:cANSI
+set guifont=Consolas:h12:cANSI
 set relativenumber " relative line numbers
 set number " actual line number for current line
 set hlsearch " highlight search
