@@ -21,14 +21,21 @@ set clipboard^=unnamed " clipboard integration
 
 syntax on
 
+" NETRW
 nnoremap <C-Space> :Explore<Enter>
+"nnoremap <C-Space> :Vex<Enter>
+"let g:netrw_banner = 0
+let g:netrw_liststyle=3 " make default :Explore style nicer
+
+" control+c for close
+nnoremap <C-c> :close<CR>
 
 " remap ; => :
 nnoremap ; :
-"nnoremap : :
 
-let g:netrw_banner = 0
-let g:netrw_liststyle=3 " make default :Explore style nicer
+" tab nav
+nnoremap <F7> :tabp<CR>
+nnoremap <F8> :tabn<CR>
 
 if has("gui_running")
     " turn off menu and toolbar
