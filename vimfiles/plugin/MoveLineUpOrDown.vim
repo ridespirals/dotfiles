@@ -41,6 +41,24 @@ function! MoveLineOrVisualUpOrDown(move_arg)
     execute "normal! ".col_num."|"
 endfunction
 
+if has("macunix")
+    nnoremap <silent> <S-Up> :<C-u>call MoveLineUp()<CR>
+    nnoremap <silent> <S-Down> :<C-u>call MoveLineDown()<CR>
+    inoremap <silent> <S-Up> <C-o>:call MoveLineUp()<CR>
+    inoremap <silent> <S-Down> <C-o>:call MoveLineDown()<CR>
+    xnoremap <silent> <S-Up> :<C-u>call MoveVisualUp()<CR>
+    xnoremap <silent> <S-Down> :<C-u>call MoveVisualDown()<CR>
+else
+    nnoremap <silent> <C-Up> :<C-u>call MoveLineUp()<CR>
+    nnoremap <silent> <C-Down> :<C-u>call MoveLineDown()<CR>
+    inoremap <silent> <C-Up> <C-o>:call MoveLineUp()<CR>
+    inoremap <silent> <C-Down> <C-o>:call MoveLineDown()<CR>
+    "vnoremap <silent> <C-Up> :<C-u>call MoveVisualUp()<CR>
+    "vnoremap <silent> <C-Down> :<C-u>call MoveVisualDown()<CR>
+    xnoremap <silent> <C-Up> :<C-u>call MoveVisualUp()<CR>
+    xnoremap <silent> <C-Down> :<C-u>call MoveVisualDown()<CR>
+endif
+
 nnoremap <silent> <C-Up> :<C-u>call MoveLineUp()<CR>
 nnoremap <silent> <C-Down> :<C-u>call MoveLineDown()<CR>
 inoremap <silent> <C-Up> <C-o>:call MoveLineUp()<CR>
