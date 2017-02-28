@@ -1,4 +1,5 @@
 #!/bin/sh
+# https://coderwall.com/p/mnwcog/create-new-github-repo-from-command-line
 
 repo_name = $1
 
