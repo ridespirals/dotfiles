@@ -4,7 +4,7 @@ alias ls='ls -AGFoh'
 
 alias love='/Applications/love.app/Content/MacOS/love'
 
-# ls with colors and all files
+# ls with colors and all files (edit)
 #alias ls='ls -laG'
 
 alias bb='echo "Updating homebrew..." && brew update && echo "Upgrading formulae..." && brew upgrade && echo "Deleting old formulae..." && brew cleanup && echo "System is up to date."'
@@ -24,4 +24,8 @@ alias push='git push'
 alias love="/Applications/love.app/Contents/MacOS/love"
 
 # generate sublime project
-alias sublimeproject="echo '{\"Folders\":[{\"path\":\".\"}]}' > '$1.sublime-project'"
+alias sublimeproject="echo '{\"folders\":[{\"path\":\".\"}]}' > '$1.sublime-project'"
+
+# find current ip address
+alias myip="curl ipecho.net/plain ; echo"
+

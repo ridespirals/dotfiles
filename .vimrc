@@ -11,6 +11,7 @@ set fileformat=unix " set unix line endings
 set history=1000 " increase history from 20 to 1000
 set ignorecase
 set autoindent
+set clipboard^=unnamed
 
 " set leader to <Space>
 let mapleader=" "
@@ -54,6 +55,10 @@ noremap <Leader>q :tabp<CR>
 
 " Ctrl+Space for Nerd Tree
 noremap <C-Space> :NERDTree %:p:h<CR>
+
+" Ctrl+C for general closing
+nnoremap <C-c> :close<CR>
+
 
 " syntax highlighting in conemu
 syntax on " syntax highlighting
