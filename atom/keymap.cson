@@ -31,4 +31,5 @@
 # Atom Flight Manual:
 # http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
 'body':
+  'ctrl-shift-S ^ctrl': 'unset!'
   'ctrl-shift-S': 'window:save-all'
