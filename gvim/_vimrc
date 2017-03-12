@@ -44,7 +44,11 @@ if has("gui_running")
 end
 
 " auto brackets
-inoremap { {<CR>}<Esc>O
+" inoremap { {<CR>}<Esc>O
+inoremap { {}<Left>
+inoremap {<CR> {<CR>}<Esc>O
+inoremap {{ {
+inoremap {} {}
 
 " show whitespace chars
 set listchars=tab:>~,trail:.,nbsp:.,eol:$
