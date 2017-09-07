@@ -18,7 +18,7 @@ alias gs='git status'
 alias a='git add'
 alias c='git commit --verbose'
 alias push='git push'
-#l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+alias gitl='git log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short'
 
 # lua love
 alias love="/Applications/love.app/Contents/MacOS/love"
