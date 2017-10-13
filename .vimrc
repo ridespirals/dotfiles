@@ -1,8 +1,8 @@
-set scrolloff=10 " number of lines to show around cursor 
+set scrolloff=10 " number of lines to show around cursor
 set relativenumber " relative line numbers
 set number " actualy line number for current line
-set hlsearch " highlight search 
-set incsearch " progressive search 
+set hlsearch " highlight search
+set incsearch " progressive search
 set expandtab " tabs -> spaces
 set tabstop=4 " set tab width
 set showmode " display current mode
@@ -12,6 +12,10 @@ set history=1000 " increase history from 20 to 1000
 set ignorecase
 set autoindent
 set clipboard^=unnamed
+
+" split to the right and down
+set splitbelow
+set splitright
 
 " set leader to <Space>
 let mapleader=" "
@@ -90,7 +94,7 @@ augroup END
 " auto-expand %% to %:h<tab
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
-" enable pathogen 
+" enable pathogen
 execute pathogen#infect()
 
 " enable CtrlP extension?
