@@ -1,0 +1,39 @@
+[user]
+	name = John Varga
+	email = john.varga@unifilabs.com
+[core]
+	editor = notepad
+[alias]
+	cm = !git add -A && git commit -m
+	cmp = !git add -A && git commit -m && git push
+	amend = commit -a --amend
+	lg = log -5 --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	ref = reflog
+	branches = branch -avv
+	co = checkout
+	tags = show-ref --tags
+	refs = show-ref --head --dereference
+	info = remote show origin
+    in = log HEAD..@{upstream}
+    out = log @{push}..HEAD
+[gui]
+	recentrepo = C:/hg/unifi-monitor
+	recentrepo = C:/hg/junk/js-compiler
+	recentrepo = C:/hg/email-data
+[http]
+	sslverify = false
+[credential]
+	helper = manager
+[diff]
+	tool = bc
+	guitool = beyondcompare4
+[difftool "bc"]
+	path = c:/Program Files/Beyond Compare 4/bcomp.exe
+[merge]
+	tool = bc
+[mergetool "bc"]
+	path = c:/Program Files/Beyond Compare 4/bcomp.exe
+[difftool "beyondcompare4"]
+	path = C:/Program Files/Beyond Compare 4/bcomp.exe
+	cmd = \"C:/Program Files/Beyond Compare 4/bcomp.exe\" \"$LOCAL\" \"$REMOTE\"
