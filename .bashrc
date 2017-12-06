@@ -12,6 +12,9 @@ alias bb='echo "Updating homebrew..." && brew update && echo "Upgrading formulae
 # sbin in path (for homebrew)
 #export PATH='/usr/local/sbin:$PATH'
 
+# hg aliases
+alias hgin='hg incoming | grep changeset | wc -l'
+
 # git aliases
 alias s='git status -s'
 alias gs='git status'
