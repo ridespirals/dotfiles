@@ -10,4 +10,5 @@ ln .bashrc ~/.bash_profile
 ln .inputrc ~/.inputrc
 ln .vimrc ~/.vimrc
 ln .gitconfig ~/.gitconfig
+ln .netrc ~/.netrc
 
