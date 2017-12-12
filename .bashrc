@@ -20,6 +20,7 @@ alias s='git status -s'
 alias gs='git status'
 alias a='git add'
 alias c='git commit --verbose'
+alias pull='git pull'
 alias push='git push'
 alias gitl='git log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short'
 
