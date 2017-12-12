@@ -75,7 +75,7 @@ colorscheme zenburn
 au GUIEnter * simalt ~x
 
 " enable RainbowParentheses on startup
-au VimEnter * RainbowParenthesesToggle
+"au VimEnter * RainbowParenthesesToggle
 
 " testing <REMOVE ME>
 
