@@ -10,8 +10,14 @@ set laststatus=2 " always show status line
 set fileformat=unix " set unix line endings
 set history=1000 " increase history from 20 to 1000
 set ignorecase
+set smartcase " ^ and this will only be case-sensitive if there's a capital letter
 set autoindent
 set clipboard^=unnamed
+set hidden " better buffers - can be put in bg when not in use
+set wildmenu " show other option in autocomplete
+set wildmode=list:longest " only autocomplete up to ambiguity
+set title
+set shortmess=atI " fix some Press Enter messages
 
 " split to the right and down
 set splitbelow
@@ -26,7 +32,11 @@ nnoremap <Space> <Nop>
 nnoremap ; :
 nnoremap : :
 
-set backspace=2 " allow backspacing in insert mode over previously-written text
+set listchars=tab:>-,trail:·,eol:$ " whitespace
+" toggle showing whitespace
+nmap <silent> <Leader>s :set nolist!<CR> 
+
+set backspace=2 " allow backspacing in insert mode over previously-written text (same as indent,eol.start
 let g:netrw_liststyle=3 " make default :Explore style nicer
 
 " splits - window
@@ -57,15 +67,42 @@ vnoremap <F9> zf
 noremap <Leader>t :tabn<CR>
 noremap <Leader>q :tabp<CR>
 
-" Ctrl+Space for Nerd Tree
-noremap <C-Space> :NERDTree %:p:h<CR>
+" paired - [v ]v for tabs
+nnoremap [v :tabp<CR>
+nnoremap ]v :tabn<CR>
+
+" swap 0 and ^, use 0 to go to beginning of actual text, ^ to beginning of line
+nnoremap 0 ^
+nnoremap ^ 0
+
+" leader->p to open fuzzyfinder
+noremap <Leader>p :Files<CR>
+noremap <C-p> :Files<CR>
 
 " Ctrl+C for general closing
 nnoremap <C-c> :close<CR>
 
+" Command+j and Command+k to quickly navigate
+nnoremap <silent> <D-j> }
+nnoremap <silent> <D-k> {
+autocmd FileType javascript map <buffer> <D-k> }
+autocmd FileType javascript map <buffer> <D-j> {
+
+" Clear current search highlight by tapping //
+nmap <silent> // :nohlsearch<CR>
+
+" Vim reload current file (v)im (r)eload
+nmap <silent> <Leader>vr :so %<CR>
+
+" (h)tml (p)review
+nmap <silent> <Leader>hp :!open -a Firefox %<CR><CR>
 
 " syntax highlighting in conemu
 syntax on " syntax highlighting
+filetype on
+filetype plugin on
+filetype indent on
+
 set t_Co=256
 let &t_AB="\e[48;5;%dm"
 let &t_AF="\e[38;5;%dm"
@@ -76,8 +113,6 @@ au GUIEnter * simalt ~x
 
 " enable RainbowParentheses on startup
 "au VimEnter * RainbowParenthesesToggle
-
-" testing <REMOVE ME>
 
 augroup general_config
 	map <C-j> <C-W>j
@@ -97,9 +132,7 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 " enable pathogen
 execute pathogen#infect()
 
-" enable CtrlP extension?
-" set runtimepath^=/Users/John/vimfiles/bundle/ctrlp.vim
-
 " change where swapfiles go
-"set directory=/Users/John/vimfiles/swapfiles//
-"cd /projects/
+" - figure out how to only do this on mac
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
