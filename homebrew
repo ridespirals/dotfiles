@@ -1,0 +1,13 @@
+#!/bin/sh
+echo 'Updating homebrew...'
+brew update
+
+echo 'Upgrading formulae...'
+brew upgrade
+
+echo "Deleting old formulae..."
+brew cleanup
+
+echo "Checking system..."
+brew doctor
+
