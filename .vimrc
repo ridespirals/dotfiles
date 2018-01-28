@@ -1,3 +1,7 @@
+" enable pathogen
+execute pathogen#infect()
+execute pathogen#helptags()
+
 set scrolloff=10 " number of lines to show around cursor
 set relativenumber " relative line numbers
 set number " actualy line number for current line
@@ -128,9 +132,6 @@ augroup END
 
 " auto-expand %% to %:h<tab
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
-
-" enable pathogen
-execute pathogen#infect()
 
 " change where swapfiles go
 " - figure out how to only do this on mac
