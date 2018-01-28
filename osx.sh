@@ -14,6 +14,7 @@ ln .netrc ~/.netrc
 
 # link homebrew update script
 ln homebrew /usr/local/bin/bb
+chmod +x /usr/local/bin/bb
 
 # create a tmp folder for vim swap/backup files
 mkdir ~/.vim-tmp
