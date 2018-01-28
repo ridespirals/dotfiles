@@ -19,3 +19,13 @@ chmod +x /usr/local/bin/bb
 # create a tmp folder for vim swap/backup files
 mkdir ~/.vim-tmp
 
+# SSH setup (for github)
+# ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+# eval "$(ssh-agent -s)" # start ssh agent in the background
+# edit ~/.ssh/config
+# Host *
+#   AddKeysToAgent yes
+#   UseKeychain yes
+#   IdentityFile ~/.ssh/id_rsa
+# ssh-add -K ~/.ssh/id_rsa
+
