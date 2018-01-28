@@ -31,13 +31,13 @@ PLUGINS=(
     "vim-airline/vim-airline"
     "junegunn/fzf"
     "junegunn/fzf.vim"
+    "sheerun/vim-polyglot"
 )
 for P in ${!PLUGINS[*]}
 do
     REPO=${PLUGINS[P]}
     PLUG_NAME=$(echo $REPO | cut -d'/' -f2)
     PLUG_DIR="${DIR}/${PLUG_NAME}"
-    REPO_PATH="git@github.com:${REPO}.git"
 
     if [ -d ${PLUG_DIR} ]
     then
@@ -49,7 +49,6 @@ do
     else
         # clone repo
         echo "+ Installing ${PLUG_NAME}"
-        git clone $REPO_PATH $PLUG_DIR
         git clone "git@github.com:${REPO}.git" $PLUG_DIR
     echo
     fi
