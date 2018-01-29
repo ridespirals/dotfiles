@@ -7,8 +7,6 @@ alias love='/Applications/love.app/Content/MacOS/love'
 # ls with colors and all files (edit)
 #alias ls='ls -laG'
 
-alias bb='echo "Updating homebrew..." && brew update && echo "Upgrading formulae..." && brew upgrade && echo "Deleting old formulae..." && echo "Checking system..." && brew cleanup && brew doctor'
-
 # sbin in path (for homebrew)
 #export PATH='/usr/local/sbin:$PATH'
 
@@ -27,6 +25,9 @@ alias gitl='git log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue
 # lua love
 alias love="/Applications/love.app/Contents/MacOS/love"
 
+# ctags alias for better javascript ctags
+#alias jtags=”ctags -R app config lib && sed -i '' -E '/^(if|switch|function|module\.exports|it|describe).+language:js$/d' tags”
+
 # generate sublime project
 alias sublimeproject="echo '{\"folders\":[{\"path\":\".\"}]}' > '$1.sublime-project'"
 
@@ -43,3 +44,4 @@ parse_git_branch() {
 }
 export PS1="\W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
