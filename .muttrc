@@ -4,11 +4,17 @@ source "~/.mutt/user"
 set imap_user="$my_username@$my_domain"
 set imap_pass=$my_password
 
-set folder="imaps://outlook.office365.com/"
-set spoolfile= +INBOX
-set postponed= +$my_drafts_noquote
-set record= +my_sent_noquote
-set trash= +my_trash_noquote
+set mbox="imap://outlook.office365.com/INBOX"
+set postponed="imap://outlook.office365.com/Drafts"
+set spoolfile="imap://outlook.office365.com/INBOX"
+set folder="imap://outlook.office365.com/"
+set record="imap://outlook.office365.com/Sent Items"
+set trash="imap://outlook.office365.com/Deleted Items"
+
+#set spoolfile= +INBOX
+#set postponed= +$my_drafts_noquote
+#set record= +my_sent_noquote
+#set trash= +my_trash_noquote
 mailboxes
 
 set imap_check_subscribed="yes"
