@@ -9,6 +9,7 @@ set hlsearch " highlight search
 set incsearch " progressive search
 set expandtab " tabs -> spaces
 set tabstop=4 " set tab width
+set shiftwidth=4 " set indent width for '>'
 set showmode " display current mode
 set laststatus=2 " always show status line
 set fileformat=unix " set unix line endings
@@ -22,6 +23,7 @@ set wildmenu " show other option in autocomplete
 set wildmode=list:longest " only autocomplete up to ambiguity
 set title
 set shortmess=atI " fix some Press Enter messages
+set nocompatible
 
 " split to the right and down
 set splitbelow
@@ -42,6 +44,10 @@ nmap <silent> <Leader>s :set nolist!<CR>
 
 set backspace=2 " allow backspacing in insert mode over previously-written text (same as indent,eol.start
 let g:netrw_liststyle=3 " make default :Explore style nicer
+
+" alternate half-page up/down
+nnoremap <Leader>j <C-d>
+nnoremap <Leader>k <C-u>
 
 " splits - window
 nmap <leader>sw<left>	:topleft vnew<CR>
@@ -67,13 +73,9 @@ nnoremap <F9> za
 onoremap <F9> <C-C>za
 vnoremap <F9> zf
 
-" fast tabn/tabp
-noremap <Leader>t :tabn<CR>
-noremap <Leader>q :tabp<CR>
-
 " paired - [v ]v for tabs
-nnoremap [v :tabp<CR>
-nnoremap ]v :tabn<CR>
+nnoremap <silent> [v :tabp<CR>
+nnoremap <silent> ]v :tabn<CR>
 
 " swap 0 and ^, use 0 to go to beginning of actual text, ^ to beginning of line
 nnoremap 0 ^
@@ -93,7 +95,7 @@ autocmd FileType javascript map <buffer> <D-k> }
 autocmd FileType javascript map <buffer> <D-j> {
 
 " Clear current search highlight by tapping //
-nmap <silent> // :nohlsearch<CR>
+nmap <silent> // :nohlsearch<CR>:call clearmatches()<CR>
 
 " Vim reload current file (v)im (r)eload
 nmap <silent> <Leader>vr :so %<CR>
@@ -104,13 +106,16 @@ nmap <silent> <Leader>hp :!open -a Firefox %<CR><CR>
 " syntax highlighting in conemu
 syntax on " syntax highlighting
 filetype on
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 set t_Co=256
 let &t_AB="\e[48;5;%dm"
 let &t_AF="\e[38;5;%dm"
 colorscheme zenburn
+
+" airline customization
+let g:airline#extensions#tabline#enabled = 1
+
 
 " start window maximized
 au GUIEnter * simalt ~x
@@ -137,3 +142,14 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 " - figure out how to only do this on mac
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
+
+" quick editing shortcuts - easily edit common files
+nnoremap <Leader>ev <C-w>s<C-w>j<C-w>L:e ~/.vimrc<CR>
+nnoremap <Leader>eg <C-w>s<C-w>j<C-w>L:e ~/.gitconfig<CR>
+nnoremap <Leader>eb <C-w>s<C-w>j<C-w>L:e ~/.bash_profile<CR>
+
+" fugitive bindings
+nnoremap ,s :Gstatus<CR>
+nnoremap ,f :GFiles<CR> # not technically fugitive but still git-related
+
