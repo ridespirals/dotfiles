@@ -153,3 +153,5 @@ nnoremap <Leader>eb <C-w>s<C-w>j<C-w>L:e ~/.bash_profile<CR>
 nnoremap ,s :Gstatus<CR>
 nnoremap ,f :GFiles<CR> # not technically fugitive but still git-related
 
+" populate quickfix with open buffers
+command! QBuffers call setqflist(map(filter(range(1, bufnr('$')), 'buflisted(v:val)'), '{"bufnr":v:val}'))
