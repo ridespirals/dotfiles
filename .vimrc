@@ -155,3 +155,5 @@ nnoremap ,f :GFiles<CR> # not technically fugitive but still git-related
 
 " populate quickfix with open buffers
 command! QBuffers call setqflist(map(filter(range(1, bufnr('$')), 'buflisted(v:val)'), '{"bufnr":v:val}'))
+" open buffer list and prepare a command to accept a number, easily open a buffer
+nnoremap ,b :ls<CR>:b<Space>
