@@ -61,4 +61,5 @@ do
     echo
     fi
 done
+echo "= All finished."
 
