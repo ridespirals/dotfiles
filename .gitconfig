@@ -2,13 +2,13 @@
 	name = John Varga
 	email = john.varga@unifilabs.com
 [core]
-	editor = notepad
+	editor = vim
 [alias]
 	cm = !git add -A && git commit -m
 	cmp = !git add -A && git commit -m && git push
 	amend = commit -a --amend
-	lg = log -5 --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lg = log -5 --graph --pretty=format:'%C(red)%h%Creset -%C(yellow reverse)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	ll = log --graph --pretty=format:'%C(red)%h%Creset -%C(magenta)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	ref = reflog
 	branches = branch -avv
 	co = checkout
@@ -22,23 +22,13 @@
     # open all filed modified in commit in EDITOR
     editc = "!sh -c '${EDITOR:-vi} $(git diff-tree --no-commit-id --name-only \
         -r ${1:-HEAD})' -"
-[gui]
-	recentrepo = C:/hg/unifi-monitor
-	recentrepo = C:/hg/junk/js-compiler
-	recentrepo = C:/hg/email-data
 [http]
 	sslverify = false
-[credential]
-	helper = manager
 [diff]
-	tool = bc
-	guitool = beyondcompare4
-[difftool "bc"]
-	path = c:/Program Files/Beyond Compare 4/bcomp.exe
+    tool = vimdiff
 [merge]
-	tool = bc
-[mergetool "bc"]
-	path = c:/Program Files/Beyond Compare 4/bcomp.exe
-[difftool "beyondcompare4"]
-	path = C:/Program Files/Beyond Compare 4/bcomp.exe
-	cmd = \"C:/Program Files/Beyond Compare 4/bcomp.exe\" \"$LOCAL\" \"$REMOTE\"
+    tool = vimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
+
