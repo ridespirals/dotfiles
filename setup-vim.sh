@@ -32,6 +32,7 @@ PLUGINS=(
     "junegunn/fzf"
     "junegunn/fzf.vim"
     "sheerun/vim-polyglot"
+    "ajh17/VimCompletesMe"
 )
 for P in ${!PLUGINS[*]}
 do
