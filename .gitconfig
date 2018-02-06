@@ -17,6 +17,11 @@
 	info = remote show origin
     in = log HEAD..@{upstream}
     out = log @{push}..HEAD
+    # open all modified files in EDITOR
+    editm = "!${EDITOR:-vi} $(git ls-files -m)"
+    # open all filed modified in commit in EDITOR
+    editc = "!sh -c '${EDITOR:-vi} $(git diff-tree --no-commit-id --name-only \
+        -r ${1:-HEAD})' -"
 [gui]
 	recentrepo = C:/hg/unifi-monitor
 	recentrepo = C:/hg/junk/js-compiler

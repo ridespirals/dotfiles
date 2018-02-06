@@ -15,9 +15,11 @@ alias hgin='hg incoming | grep changeset | wc -l'
 
 # git aliases
 alias s='git status -s'
+alias st='git status'
 alias gs='git status'
-alias a='git add'
-alias c='git commit --verbose'
+alias a='git add -u'
+alias ap='git add -p'
+alias cm='git commit --verbose -m $1'
 alias pull='git pull'
 alias push='git push'
 alias gitl='git log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short'
