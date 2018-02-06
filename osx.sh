@@ -6,14 +6,14 @@ sudo pmset -a hibernatemode 0
 sudo pmset -a sms 0
 
 # link up dotfiles
-ln .bashrc ~/.bash_profile
-ln .inputrc ~/.inputrc
-ln .vimrc ~/.vimrc
-ln .gitconfig ~/.gitconfig
-ln .netrc ~/.netrc
+ln -s .bashrc ~/.bash_profile
+ln -s .inputrc ~/.inputrc
+ln -s .vimrc ~/.vimrc
+ln -s .gitconfig ~/.gitconfig
+ln -s .netrc ~/.netrc
 
 # link homebrew update script
-ln homebrew /usr/local/bin/bb
+ln -s homebrew /usr/local/bin/bb
 chmod +x /usr/local/bin/bb
 
 # create a tmp folder for vim swap/backup files
