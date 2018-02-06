@@ -11,6 +11,7 @@ ln -s .inputrc ~/.inputrc
 ln -s .vimrc ~/.vimrc
 ln -s .gitconfig ~/.gitconfig
 ln -s .netrc ~/.netrc
+ln -s .bash-powerline.sh ~/.bash-powerline.sh
 
 # link homebrew update script
 ln -s homebrew /usr/local/bin/bb

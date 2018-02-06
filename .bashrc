@@ -47,7 +47,7 @@ parse_git_branch() {
 }
 export PS1="\W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 
-#source $HOME/.bash-powerline.sh
+source $HOME/.bash-powerline.sh
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 # screensaver. call pipes.sh if it exists
