@@ -44,20 +44,20 @@ do
     then
         # cd and git pull
         # TODO: use printf to keep it neat on one line
-        echo "^ Updating ${PLUG_NAME}"
+        printf "^ Updating ${PLUG_NAME}..."
         cd $PLUG_DIR
         git fetch
         if [[ $(git log HEAD..origin | wc -c) -ne 0 ]]
         then
             git pull > /dev/null
-            echo " + plugin updated"
+            printf " updated.\n"
         else
             # no changes
-            echo " - no changes"
+            printf " no changes.\n"
         fi
     else
         # clone repo
-        echo "+ Installing ${PLUG_NAME}"
+        printf "+ Installing ${PLUG_NAME}\n"
         git clone "git@github.com:${REPO}.git" $PLUG_DIR
     echo
     fi
