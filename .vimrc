@@ -36,7 +36,12 @@ nnoremap <Space> <Nop>
 
 " remap ; <=> :
 nnoremap ; :
-nnoremap : :
+"nnoremap : :
+
+" find something to use for ; and , since i would like to use them but
+" having ; mapped to : is too useful
+nnoremap <Leader>, ,
+nnoremap <Leader>; ;
 
 set listchars=tab:>-,trail:·,eol:$ " whitespace
 " toggle showing whitespace
@@ -44,6 +49,7 @@ nmap <silent> <Leader>s :set nolist!<CR>
 
 set backspace=2 " allow backspacing in insert mode over previously-written text (same as indent,eol.start
 let g:netrw_liststyle=3 " make default :Explore style nicer
+let g:netrw_browse_split=0 " open file by re-using same window
 
 " alternate half-page up/down
 nnoremap <Leader>j <C-d>
@@ -67,11 +73,6 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
-" code folding
-inoremap <F9> <C-O>za
-nnoremap <F9> za
-onoremap <F9> <C-C>za
-vnoremap <F9> zf
 
 " paired - [v ]v for tabs
 nnoremap <silent> [v :tabp<CR>
@@ -151,7 +152,8 @@ nnoremap <Leader>eb <C-w>s<C-w>j<C-w>L:e ~/.bash_profile<CR>
 
 " fugitive bindings
 nnoremap ,s :Gstatus<CR>
-nnoremap ,f :GFiles<CR> # not technically fugitive but still git-related
+" not technically fugitive but still git related
+nnoremap ,f :GFiles<CR> 
 
 " populate quickfix with open buffers
 command! QBuffers call setqflist(map(filter(range(1, bufnr('$')), 'buflisted(v:val)'), '{"bufnr":v:val}'))
