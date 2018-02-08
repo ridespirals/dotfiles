@@ -20,6 +20,13 @@ chmod +x /usr/local/bin/bb
 # create a tmp folder for vim swap/backup files
 mkdir ~/.vim-tmp
 
+# link keybinding dict - make Home/End keys behave like windows
+if [ ! -f ~/Library/Keybindings/DefaultKeyBindings.dict ]
+then
+    mkdir -p ~/Library/KeyBindings
+    ln -s DefaultKeyBindings.dict ~/Library/Keybindings/DefaultKeyBindings.dict
+fi
+
 # SSH setup (for github)
 # ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 # eval "$(ssh-agent -s)" # start ssh agent in the background
