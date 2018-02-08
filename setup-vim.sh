@@ -17,6 +17,9 @@ then
     # color schemes not in place, copy it over
     # TODO: get colors online? copy from dotfiles?
     echo "++ Colors not found! Go get zenburn somewhere."
+    mkdir -p ~/.vim/colors
+    cp ./vimfiles/colors/zenburn.vim ~/.vim/colors
+    cp ./vimfiles/colors/solarized.vim ~/.vim/colors
 fi
 
 
