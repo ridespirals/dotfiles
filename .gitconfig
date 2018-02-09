@@ -1,20 +1,20 @@
 [user]
-	name = John Varga
-	email = john.varga@unifilabs.com
+    name = John Varga
+    email = john.varga@unifilabs.com
 [core]
-	editor = vim
+    editor = vim
 [alias]
-	cm = !git add -A && git commit -m
-	cmp = !git add -A && git commit -m && git push
-	amend = commit -a --amend
-	lg = log -5 --graph --pretty=format:'%C(red)%h%Creset -%C(yellow reverse)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	ll = log --graph --pretty=format:'%C(red)%h%Creset -%C(magenta)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	ref = reflog
-	branches = branch -avv
-	co = checkout
-	tags = show-ref --tags
-	refs = show-ref --head --dereference
-	info = remote show origin
+    cm = !git add -A && git commit -m
+    cmp = !git add -A && git commit -m && git push
+    amend = commit -a --amend
+    lg = log -15 --graph --pretty=format:'%C(red)%h%Creset -%C(yellow reverse)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    ll = log --graph --pretty=format:'%C(red)%h%Creset -%C(magenta)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    ref = reflog
+    branches = branch -avv
+    co = checkout
+    tags = show-ref --tags
+    refs = show-ref --head --dereference
+    info = remote show origin
     in = log HEAD..@{upstream}
     out = log @{push}..HEAD
     # open all modified files in EDITOR
@@ -23,12 +23,12 @@
     editc = "!sh -c '${EDITOR:-vi} $(git diff-tree --no-commit-id --name-only \
         -r ${1:-HEAD})' -"
 [http]
-	sslverify = false
+    sslverify = false
 [diff]
     tool = vimdiff
 [merge]
     tool = vimdiff
-	conflictstyle = diff3
+    conflictstyle = diff3
 [mergetool]
-	prompt = false
+    prompt = false
 
