@@ -33,7 +33,6 @@ PLUGINS=(
     "vim-airline/vim-airline"
     "junegunn/fzf"
     "junegunn/fzf.vim"
-    "sheerun/vim-polyglot"
     "ajh17/VimCompletesMe"
     "mileszs/ack.vim"
     "itmammoth/doorboy.vim"
