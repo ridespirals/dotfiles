@@ -27,7 +27,6 @@ DIR="$HOME/.vim/bundle"
 PLUGINS=(
     "tpope/vim-unimpaired" 
     "tpope/vim-fugitive"
-    "tpope/vim-vinegar"
     "tpope/vim-commentary"
     "tpope/vim-characterize"
     "tpope/vim-surround"
@@ -37,7 +36,10 @@ PLUGINS=(
     "sheerun/vim-polyglot"
     "ajh17/VimCompletesMe"
     "mileszs/ack.vim"
+    "itmammoth/doorboy.vim"
+    "mattn/emmet-vim"
 )
+
 for P in ${!PLUGINS[*]}
 do
     REPO=${PLUGINS[P]}
