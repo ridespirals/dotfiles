@@ -1,4 +1,6 @@
 export PATH="/usr/local/sbin:$PATH"
+export VS="$HOME/.vim-sessions"
+
 alias ls='ls -AGFoh'
 alias love='/Applications/love.app/Content/MacOS/love'
 alias reloadbash='. $HOME/.bash_profile'
