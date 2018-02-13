@@ -1,15 +1,17 @@
 export PATH="/usr/local/sbin:$PATH"
-
 alias ls='ls -AGFoh'
-
 alias love='/Applications/love.app/Content/MacOS/love'
-
-# ls with colors and all files (edit)
-#alias ls='ls -laG'
-
-# sbin in path (for homebrew)
-#export PATH='/usr/local/sbin:$PATH'
-
+alias reloadbash='. $HOME/.bash_profile'
+# color grep output
+alias grep='grep --color=auto'
+# easy sha1
+alias sha1='openssl sha1'
+# better mkdir
+alias mkdir='mkdir -pv'
+# quickly get headers for url
+alias header='curl -I'
+# resume wget by default
+alias wget='wget -c'
 # hg aliases
 alias hgin='hg incoming | grep changeset | wc -l'
 

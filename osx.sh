@@ -5,13 +5,15 @@ sudo pmset -a hibernatemode 0
 # disable Sudden Motion Sensor (for SSD-only systems)
 sudo pmset -a sms 0
 
+# dotfiles dir. maybe find a better way to do this?
+DOTFILES="${HOME}/source/dotfiles"
+
 # link up dotfiles
-ln -s .bashrc ~/.bash_profile
-ln -s .inputrc ~/.inputrc
-ln -s .vimrc ~/.vimrc
-ln -s .gitconfig ~/.gitconfig
-ln -s .netrc ~/.netrc
-ln -s .bash-powerline.sh ~/.bash-powerline.sh
+ln -s "$DOTFILES/.bashrc" "$HOME/.bash_profile"
+ln -s "$DOTFILES/.inputrc" "$HOME/.inputrc"
+ln -s "$DOTFILES/.vimrc" "$HOME/.vimrc"
+ln -s "$DOTFILES/.gitconfig" "$HOME/.gitconfig"
+ln -s "$DOTFILES/.bash-powerline.sh" "$HOME/.bash-powerline.sh"
 
 # link homebrew update script
 ln -s homebrew /usr/local/bin/bb
@@ -21,11 +23,13 @@ chmod +x /usr/local/bin/bb
 mkdir ~/.vim-tmp
 
 # link keybinding dict - make Home/End keys behave like windows
-if [ ! -f ~/Library/Keybindings/DefaultKeyBindings.dict ]
+if [ ! -f "$HOME/Library/Keybindings/DefaultKeyBindings.dict" ]
 then
-    mkdir -p ~/Library/KeyBindings
-    ln -s DefaultKeyBindings.dict ~/Library/Keybindings/DefaultKeyBindings.dict
+    echo "+ KeyBinding dict not found, linking file"
+    mkdir -p "$HOME/Library/KeyBindings"
+    ln -s "$DOTFILES/DefaultKeyBinding.dict" "$HOME/Library/KeyBindings/DefaultKeyBinding.dict"
 fi
+
 
 # SSH setup (for github)
 # ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
