@@ -21,7 +21,6 @@ set clipboard^=unnamed
 set hidden " better buffers - can be put in bg when not in use
 set wildmenu " show other option in autocomplete
 set wildmode=list:longest " only autocomplete up to ambiguity
-set title
 set shortmess=atI " fix some Press Enter messages
 set nocompatible
 
