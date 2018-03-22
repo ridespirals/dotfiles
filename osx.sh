@@ -9,18 +9,39 @@ sudo pmset -a sms 0
 DOTFILES="${HOME}/source/dotfiles"
 
 # link up dotfiles
-ln -s "$DOTFILES/.bashrc" "$HOME/.bash_profile"
-ln -s "$DOTFILES/.inputrc" "$HOME/.inputrc"
-ln -s "$DOTFILES/.vimrc" "$HOME/.vimrc"
-ln -s "$DOTFILES/.gitconfig" "$HOME/.gitconfig"
-ln -s "$DOTFILES/.bash-powerline.sh" "$HOME/.bash-powerline.sh"
+if [ ! -f "$HOME/.bash_profile" ]
+then
+    ln -s "$DOTFILES/.bashrc" "$HOME/.bash_profile"
+fi
+if [ ! -f "$HOME/.inputrc" ]
+then
+    ln -s "$DOTFILES/.inputrc" "$HOME/.inputrc"
+fi
+if [ ! -f "$HOME/.vimrc" ]
+then
+    ln -s "$DOTFILES/.vimrc" "$HOME/.vimrc"
+fi
+if [ ! -f "$HOME/.gitconfig" ]
+then
+    ln -s "$DOTFILES/.gitconfig" "$HOME/.gitconfig"
+fi
+if [ ! -f "$HOME/.bash-powerline.sh" ]
+then
+    ln -s "$DOTFILES/.bash-powerline.sh" "$HOME/.bash-powerline.sh"
+fi
 
 # link homebrew update script
-ln -s homebrew /usr/local/bin/bb
-chmod +x /usr/local/bin/bb
+if [ ! -f /usr/local/bin/bb ]
+then
+    ln -s "$DOTFILES/homebrew" /usr/local/bin/bb
+    chmod +x /usr/local/bin/bb
+fi
 
 # create a tmp folder for vim swap/backup files
-mkdir ~/.vim-tmp
+if [ ! -d "$HOME/.vim-tmp" ]
+then
+    mkdir ~/.vim-tmp
+fi
 
 # link keybinding dict - make Home/End keys behave like windows
 if [ ! -f "$HOME/Library/Keybindings/DefaultKeyBindings.dict" ]
