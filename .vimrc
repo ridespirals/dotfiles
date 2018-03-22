@@ -153,8 +153,10 @@ nnoremap <Leader>eb <C-w>s<C-w>j<C-w>L:e ~/.bash_profile<CR>
 nnoremap ,s :Gstatus<CR>
 " not technically fugitive but still git related
 nnoremap ,f :GFiles<CR> 
+" fuzzy finding open buffers
+nnoremap ,b :Buffers<CR>
 
 " populate quickfix with open buffers
 command! QBuffers call setqflist(map(filter(range(1, bufnr('$')), 'buflisted(v:val)'), '{"bufnr":v:val}'))
 " open buffer list and prepare a command to accept a number, easily open a buffer
-nnoremap ,b :ls<CR>:b<Space>
+nnoremap ,q :ls<CR>:b<Space>
