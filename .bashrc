@@ -39,7 +39,9 @@ alias love="/Applications/love.app/Contents/MacOS/love"
 #alias jtags=”ctags -R app config lib && sed -i '' -E '/^(if|switch|function|module\.exports|it|describe).+language:js$/d' tags”
 
 # generate sublime project
-alias sublimeproject="echo '{\"folders\":[{\"path\":\".\"}]}' > '$1.sublime-project'"
+createSublimeProject() {
+    echo "{\"folders\":[{\"path\":\".\"}]}" > "$1.sublime-project"
+}
 
 # find current ip address
 alias myip="curl ipecho.net/plain ; echo"
