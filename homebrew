@@ -1,13 +1,21 @@
 #!/bin/sh
-echo 'Updating homebrew...'
+printf 'Updating homebrew...'
 brew update
+printf ' done\n'
 
-echo 'Upgrading formulae...'
+printf 'Upgrading formulae...'
 brew upgrade
+printf ' done\n'
 
-echo "Deleting old formulae..."
+printf 'Upgrading casks...'
+brew cask upgrade
+printf ' done\n'
+
+printf "Deleting old formulae..."
 brew cleanup
+printf ' done\n'
 
-echo "Checking system..."
+printf "Checking system..."
 brew doctor
+printf ' done\n'
 
