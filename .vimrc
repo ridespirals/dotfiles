@@ -116,7 +116,6 @@ colorscheme zenburn
 " airline customization
 let g:airline#extensions#tabline#enabled = 1
 
-
 " start window maximized
 au GUIEnter * simalt ~x
 
@@ -160,3 +159,8 @@ nnoremap ,b :Buffers<CR>
 command! QBuffers call setqflist(map(filter(range(1, bufnr('$')), 'buflisted(v:val)'), '{"bufnr":v:val}'))
 " open buffer list and prepare a command to accept a number, easily open a buffer
 nnoremap ,q :ls<CR>:b<Space>
+
+" use the silver searcher instead of ack for ack.vim
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif

@@ -31,6 +31,7 @@ PLUGINS=(
     "tpope/vim-characterize"
     "tpope/vim-surround"
     "vim-airline/vim-airline"
+    "dracula/vim"
     "junegunn/fzf"
     "junegunn/fzf.vim"
     "pangloss/vim-javascript"
