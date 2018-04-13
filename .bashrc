@@ -14,6 +14,8 @@ alias mkdir='mkdir -pv'
 alias header='curl -I'
 # resume wget by default
 alias wget='wget -c'
+# list directories, one per line (useful for sending to other scripts/commands)
+alias directories='ls -1p | grep "/$" | sed "s/\/$//"'
 # hg aliases
 alias hgin='hg incoming | grep changeset | wc -l'
 
