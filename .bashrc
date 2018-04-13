@@ -33,6 +33,7 @@ alias pull='git pull'
 alias push='git push'
 alias gitl='git log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short'
 alias changes='git log --oneline --graph --stat --dirstat'
+alias cont='git rebase --continue'
 
 # lua love
 alias love="/Applications/love.app/Contents/MacOS/love"
