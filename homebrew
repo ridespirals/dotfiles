@@ -13,7 +13,6 @@ printf ' done\n'
 
 printf "Deleting old formulae..."
 brew cleanup
-printf ' done\n'
 
 printf "Checking system..."
 brew doctor
