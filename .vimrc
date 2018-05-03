@@ -87,6 +87,8 @@ noremap <C-p> :Files<CR>
 
 " Ctrl+C for general closing
 nnoremap <C-c> :close<CR>
+" Shift+Ctrl+D for deleting buffers
+nnoremap <C-g> :bd<CR>
 
 " Command+j and Command+k to quickly navigate
 nnoremap <silent> <D-j> }
