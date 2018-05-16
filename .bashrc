@@ -18,6 +18,8 @@ alias wget='wget -c'
 alias directories='ls -1p | grep "/$" | sed "s/\/$//"'
 # hg aliases
 alias hgin='hg incoming | grep changeset | wc -l'
+# helpful yarn command
+alias yu='yarn upgrade-interactive'
 
 # git aliases
 alias s='git status -s'
