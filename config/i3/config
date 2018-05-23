@@ -179,17 +179,18 @@ bar {
 
         font xft:Lato Mono Regular 8, siji 8
 
+        separator_symbol //
         colors {
             background #$bgcolor
             statusline #$txtcolor
-            separator #$txtcolor
+            separator #666666
             focused_workspace #$fgcolor #$fgcolor #$bgcolor
             inactive_workspace #$bgcolor #$bgcolor #$txtcolor
         }
 }
 
 hide_edge_borders both
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 5
 gaps inner 10
 gaps outer 10
 
