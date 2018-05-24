@@ -152,10 +152,13 @@ nnoremap <Leader>eb <C-w>s<C-w>j<C-w>L:e ~/.bash_profile<CR>
 
 " fugitive bindings
 nnoremap ,s :Gstatus<CR>
-" not technically fugitive but still git related
+
+" fuzzy finding (fzf)
 nnoremap ,f :GFiles<CR> 
 " fuzzy finding open buffers
 nnoremap ,b :Buffers<CR>
+" use ag for fzf
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 " populate quickfix with open buffers
 command! QBuffers call setqflist(map(filter(range(1, bufnr('$')), 'buflisted(v:val)'), '{"bufnr":v:val}'))
