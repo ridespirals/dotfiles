@@ -75,5 +75,10 @@ if [[ $(which pipes.sh | wc -c) -ne 0 ]]; then
     alias ss="pipes.sh -t c################ -p 2"
 fi
 
+# set fzf to use ag
+if [ -x "$(command -v fzf)" ] && [ -x "$(command -v ag)" ]; then
+    export FZF_DEFAULT_COMMAND='ag -g ""'
+fi
+
 # when using zenburn, use bright blue for directories (like ls)
 #LSCOLORS=$LSCOLORS:'d=0;35:' ; export LSCOLORS
