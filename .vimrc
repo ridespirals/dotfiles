@@ -44,7 +44,7 @@ nnoremap <Leader>; ;
 
 set listchars=tab:>-,trail:·,eol:$ " whitespace
 " toggle showing whitespace
-nmap <silent> <Leader>s :set nolist!<CR> 
+nmap <silent> <Leader>s :set nolist!<CR>
 
 set backspace=2 " allow backspacing in insert mode over previously-written text (same as indent,eol.start
 let g:netrw_liststyle=3 " make default :Explore style nicer
@@ -95,6 +95,10 @@ nnoremap <silent> <D-j> }
 nnoremap <silent> <D-k> {
 autocmd FileType javascript map <buffer> <D-k> }
 autocmd FileType javascript map <buffer> <D-j> {
+
+" F8 to indent entire document
+map <F8> gg=G
+map <F7> :/\s\+$/<CR>
 
 " Clear current search highlight by tapping //
 nmap <silent> // :nohlsearch<CR>:call clearmatches()<CR>
@@ -154,7 +158,7 @@ nnoremap <Leader>eb <C-w>s<C-w>j<C-w>L:e ~/.bash_profile<CR>
 nnoremap ,s :Gstatus<CR>
 
 " fuzzy finding (fzf)
-nnoremap ,f :GFiles<CR> 
+nnoremap ,f :GFiles<CR>
 " fuzzy finding open buffers
 nnoremap ,b :Buffers<CR>
 " use ag for fzf
