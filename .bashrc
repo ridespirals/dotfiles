@@ -82,3 +82,5 @@ fi
 
 # when using zenburn, use bright blue for directories (like ls)
 #LSCOLORS=$LSCOLORS:'d=0;35:' ; export LSCOLORS
+
+# split profile into multiple files https://gist.github.com/bkeepers/132618
