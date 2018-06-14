@@ -22,6 +22,7 @@ alias hgin='hg incoming | grep changeset | wc -l'
 alias yu='yarn upgrade-interactive'
 
 # git aliases
+alias lg='git lg'
 alias s='git status -s'
 alias st='git status'
 alias gs='git status'
