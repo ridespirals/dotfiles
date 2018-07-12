@@ -98,7 +98,10 @@ autocmd FileType javascript map <buffer> <D-j> {
 
 " F8 to indent entire document
 map <F8> gg=G
+" F7 to highlight all trailing whitepsace
 map <F7> :/\s\+$/<CR>
+" F9 to delete all trailing whitespace
+map <F9> :%s/\s\+$//g<CR>
 
 " Clear current search highlight by tapping //
 nmap <silent> // :nohlsearch<CR>:call clearmatches()<CR>
