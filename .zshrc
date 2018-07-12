@@ -79,7 +79,7 @@ POWERLEVEL9K_SHORTEN_STRATEGY=tuncate_from_right
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+  export EDITOR='vim'
 # else
 #   export EDITOR='mvim'
 # fi
