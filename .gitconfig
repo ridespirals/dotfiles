@@ -23,6 +23,7 @@
     editc = "!sh -c '${EDITOR:-vi} $(git diff-tree --no-commit-id --name-only \
         -r ${1:-HEAD})' -"
     get = fetch --all --prune
+    fwl = push --force-with-lease
 [http]
     sslverify = false
 [diff]
@@ -33,3 +34,5 @@
 [mergetool]
     prompt = false
 
+[rerere]
+	enabled = true
