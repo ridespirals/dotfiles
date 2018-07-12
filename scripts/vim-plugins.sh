@@ -39,6 +39,7 @@ PLUGINS=(
     "mileszs/ack.vim"
     "itmammoth/doorboy.vim"
     "mattn/emmet-vim"
+    "vim-syntastic/syntastic"
 )
 
 for P in ${!PLUGINS[*]}

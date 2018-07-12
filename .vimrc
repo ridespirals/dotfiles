@@ -176,3 +176,13 @@ nnoremap ,q :ls<CR>:b<Space>
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 endif
+
+" syntastic
+let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map = {'mode': 'passive'}
+" use local eslint bin rather than global
+" let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
+" always populate errors list (not sure i want to use this yet)
+" let g:syntastic_always_populate_loc_list = 1
