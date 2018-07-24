@@ -30,6 +30,7 @@ PLUGINS=(
     "tpope/vim-commentary"
     "tpope/vim-characterize"
     "tpope/vim-surround"
+    "tpope/vim-repeat"
     "vim-airline/vim-airline"
     "dracula/vim"
     "junegunn/fzf"
