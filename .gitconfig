@@ -7,7 +7,7 @@
     cm = !git add -A && git commit -m
     cmp = !git add -A && git commit -m && git push
     amend = commit -a --amend
-    lg = log -15 --graph --pretty=format:'%C(red)%h%Creset -%C(yellow reverse)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lg = log --graph --pretty=format:'%C(red)%h%Creset -%C(yellow reverse)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     ll = log --graph --pretty=format:'%C(red)%h%Creset -%C(magenta)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     ref = reflog
     branches = branch -avv
