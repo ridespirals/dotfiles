@@ -120,6 +120,7 @@ alias yu='yarn upgrade-interactive'
 
 # git aliases
 alias lg='git lg'
+alias lga='git lg --all'
 alias s='git status -s'
 alias st='git status'
 alias gs='git status'
