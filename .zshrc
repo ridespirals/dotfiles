@@ -117,6 +117,8 @@ alias directories='ls -1p | grep "/$" | sed "s/\/$//"'
 alias hgin='hg incoming | grep changeset | wc -l'
 # helpful yarn command
 alias yu='yarn upgrade-interactive'
+# shortcut editors
+alias ez='vim ${HOME}/.zshrc'
 
 # git aliases
 alias lg='git lg'
