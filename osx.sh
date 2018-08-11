@@ -44,7 +44,13 @@ fi
 # create a tmp folder for vim swap/backup files
 if [ ! -d "$HOME/.vim-tmp" ]
 then
-    mkdir ~/.vim-tmp
+    mkdir "$HOME/.vim-tmp"
+fi
+
+# create folder for vim sessions
+if [ ! -d "$HOME/.vim-sessions" ]
+then
+    mkdir "$HOME/.vim-sessions"
 fi
 
 # link keybinding dict - make Home/End keys behave like windows
