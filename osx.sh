@@ -17,9 +17,9 @@ fi
 DOTFILES="${HOME}/source/dotfiles"
 
 # link up dotfiles
-if [ ! -f "$HOME/.bash_profile" ]
+if [ ! -f "$HOME/.zshrc" ]
 then
-    ln -s "$DOTFILES/.bashrc" "$HOME/.bash_profile"
+    ln -s "$DOTFILES/.zshrc" "$HOME/.zshrc"
 fi
 if [ ! -f "$HOME/.inputrc" ]
 then
@@ -32,10 +32,6 @@ fi
 if [ ! -f "$HOME/.gitconfig" ]
 then
     ln -s "$DOTFILES/.gitconfig" "$HOME/.gitconfig"
-fi
-if [ ! -f "$HOME/.bash-powerline.sh" ]
-then
-    ln -s "$DOTFILES/.bash-powerline.sh" "$HOME/.bash-powerline.sh"
 fi
 
 # link homebrew update script
