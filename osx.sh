@@ -5,6 +5,14 @@ sudo pmset -a hibernatemode 0
 # disable Sudden Motion Sensor (for SSD-only systems)
 sudo pmset -a sms 0
 
+# set default screenshot location
+screenshots="Documents/Screenshots"
+if [ ! -d "$HOME/$screenshots" ]
+then
+    mkdir -p "$HOME/$screenshots"
+    defaults write com.apple.screencapture location "$HOME/$screenshots"
+fi
+
 # dotfiles dir. maybe find a better way to do this?
 DOTFILES="${HOME}/source/dotfiles"
 
