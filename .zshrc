@@ -125,7 +125,7 @@ alias tree='tree --du -h'
 # git aliases
 alias lg='git lg'
 alias lga='git lg --all'
-alias s='git status -s'
+alias s='git status -s --branch'
 alias st='git status'
 alias gs='git status'
 alias gd='git diff'
