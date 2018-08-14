@@ -119,6 +119,8 @@ alias hgin='hg incoming | grep changeset | wc -l'
 alias yu='yarn upgrade-interactive'
 # shortcut editors
 alias ez='vim ${HOME}/.zshrc'
+# default tree showing disk usage
+alias tree='tree --du -h'
 
 # git aliases
 alias lg='git lg'
