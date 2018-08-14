@@ -28,12 +28,12 @@
     sslverify = false
 [diff]
     tool = vimdiff
+    algorithm = patience
 [merge]
     tool = vimdiff
     conflictstyle = diff3
 [mergetool]
     prompt = false
-
 [rerere]
 	enabled = true
 [pull]
