@@ -81,10 +81,6 @@ nnoremap <silent> ]v :tabn<CR>
 nnoremap 0 ^
 nnoremap ^ 0
 
-" leader->p to open fuzzyfinder
-noremap <Leader>p :Files<CR>
-noremap <C-p> :Files<CR>
-
 " Ctrl+C for general closing
 nnoremap <C-c> :close<CR>
 " Shift+Ctrl+D for deleting buffers
@@ -151,21 +147,25 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
-
 " quick editing shortcuts - easily edit common files
 nnoremap <Leader>ev <C-w>s<C-w>j<C-w>L:e ~/.vimrc<CR>
 nnoremap <Leader>eg <C-w>s<C-w>j<C-w>L:e ~/.gitconfig<CR>
 nnoremap <Leader>eb <C-w>s<C-w>j<C-w>L:e ~/.bash_profile<CR>
+nnoremap <Leader>ez <C-w>s<C-w>j<C-w>L:e ~/.zshrc<CR>
 
 " fugitive bindings
 nnoremap ,s :Gstatus<CR>
+nnoremap ,c :Gcommit<CR>
+nnoremap ,d :Gdiff<CR>
 
-" fuzzy finding (fzf)
+" [fzf] - fuzzy finding
+" fuzzy finding tracked files
 nnoremap ,f :GFiles<CR>
 " fuzzy finding open buffers
 nnoremap ,b :Buffers<CR>
-" use ag for fzf
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+" fuzzy finding all files
+noremap <Leader>p :Files<CR>
+noremap <C-p> :Files<CR>
 
 " populate quickfix with open buffers
 command! QBuffers call setqflist(map(filter(range(1, bufnr('$')), 'buflisted(v:val)'), '{"bufnr":v:val}'))
@@ -175,6 +175,8 @@ nnoremap ,q :ls<CR>:b<Space>
 " use the silver searcher instead of ack for ack.vim
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
+    " use ag for fzf too
+    let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 endif
 
 " syntastic
