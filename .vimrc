@@ -158,8 +158,8 @@ nnoremap <Leader>eb <C-w>s<C-w>j<C-w>L:e ~/.bash_profile<CR>
 nnoremap <Leader>ez <C-w>s<C-w>j<C-w>L:e ~/.zshrc<CR>
 
 " fugitive bindings
-nnoremap ,s :Gstatus<CR>
-nnoremap ,c :Gcommit<CR>
+nnoremap ,s :above Gstatus<CR>
+nnoremap ,c :above Gcommit<CR>
 nnoremap ,d :Gdiff<CR>
 
 " [fzf] - fuzzy finding
