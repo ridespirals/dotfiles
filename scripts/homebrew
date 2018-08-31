@@ -8,7 +8,7 @@ brew upgrade
 printf ' done\n'
 
 printf 'Upgrading casks...'
-brew cask upgrade --greedy
+brew cask upgrade
 printf ' done\n'
 
 printf "Deleting old formulae..."
