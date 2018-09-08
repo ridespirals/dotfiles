@@ -56,7 +56,10 @@ do
     then
         # cd and git pull
         # TODO: use printf to keep it neat on one line
-        printf "^ Updating ${bold}${PLUG_NAME}${normal}: "
+
+        # this is supposed to be an arrow... not working
+        printf $'\u2192 '
+        printf "${bold}${PLUG_NAME}${normal}: "
         cd $PLUG_DIR
         git fetch > /dev/null 2>&1
         if [[ $(git log HEAD..origin | wc -c) -ne 0 ]]
