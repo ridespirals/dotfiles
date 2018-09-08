@@ -22,6 +22,9 @@ then
     cp ./vimfiles/colors/solarized.vim ~/.vim/colors
 fi
 
+bold=$(tput bold)
+blue=$(tput setaf 4)
+normal=$(tput sgr0)
 
 DIR="$HOME/.vim/bundle"
 PLUGINS=(
@@ -53,16 +56,16 @@ do
     then
         # cd and git pull
         # TODO: use printf to keep it neat on one line
-        printf "^ Updating ${PLUG_NAME}..."
+        printf "^ Updating ${bold}${PLUG_NAME}${normal}: "
         cd $PLUG_DIR
-        git fetch
+        git fetch > /dev/null 2>&1
         if [[ $(git log HEAD..origin | wc -c) -ne 0 ]]
         then
-            git pull > /dev/null
-            printf " updated.\n"
+            git pull > /dev/null 2>&1
+            printf "${blue}updated.${normal}\n"
         else
             # no changes
-            printf " no changes.\n"
+            printf "no changes.\n"
         fi
     else
         # clone repo
