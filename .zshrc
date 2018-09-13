@@ -149,3 +149,8 @@ alias diffdev='git diff develop..'
 alias reb='git rebase -i develop'
 alias pushb='git push -u origin'
 alias bd='git branch -d'
+
+# preview markdown files
+rmd() {
+    pandoc $1 | lynx -stdin
+}
