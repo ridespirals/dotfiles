@@ -24,6 +24,7 @@ fi
 
 bold=$(tput bold)
 blue=$(tput setaf 4)
+green=$(tput setaf 2)
 normal=$(tput sgr0)
 
 DIR="$HOME/.vim/bundle"
@@ -65,7 +66,7 @@ do
         if [[ $(git log HEAD..origin | wc -c) -ne 0 ]]
         then
             git pull > /dev/null 2>&1
-            printf "${blue}updated.${normal}\n"
+            printf "${green}updated.${normal}\n"
         else
             # no changes
             printf "no changes.\n"
