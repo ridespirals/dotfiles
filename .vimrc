@@ -192,3 +192,8 @@ let g:syntastic_mode_map = {'mode': 'passive'}
 " let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
 " always populate errors list (not sure i want to use this yet)
 " let g:syntastic_always_populate_loc_list = 1
+
+" load custom commands from separate file
+if filereadable(expand("~/.vimrc.commands"))
+    source ~/.vimrc.commands
+endif

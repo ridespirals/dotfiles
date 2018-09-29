@@ -29,6 +29,10 @@ if [ ! -f "$HOME/.vimrc" ]
 then
     ln -s "$DOTFILES/.vimrc" "$HOME/.vimrc"
 fi
+if [ ! -f "$HOME/.vimrc.commands" ]
+then
+    ln -s "$DOTFILES/.vimrc.commands" "$HOME/.vimrc.commands"
+fi
 if [ ! -f "$HOME/.gitconfig" ]
 then
     ln -s "$DOTFILES/.gitconfig" "$HOME/.gitconfig"
