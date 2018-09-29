@@ -84,6 +84,12 @@ POWERLEVEL9K_SHORTEN_STRATEGY=tuncate_from_right
 #   export EDITOR='mvim'
 # fi
 
+# enable syntax highlighting in less
+# `brew install source-highlight`
+#
+export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"
+export LESS=" -R "
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -121,6 +127,8 @@ alias yu='yarn upgrade-interactive'
 alias ez='vim ${HOME}/.zshrc'
 # default tree showing disk usage
 alias tree='tree --du -h'
+# better settings for less
+alias less='less -m -N -g -i -J --underline-special --SILENT'
 
 # git aliases
 alias lg='git lg'
