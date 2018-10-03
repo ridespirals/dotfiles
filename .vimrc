@@ -128,6 +128,7 @@ au GUIEnter * simalt ~x
 " enable RainbowParentheses on startup
 "au VimEnter * RainbowParenthesesToggle
 
+" Control+j/k/h/l for moving between windows
 augroup general_config
 	map <C-j> <C-W>j
 	map <C-k> <C-W>k
@@ -139,6 +140,9 @@ augroup general_config
 	imap <PageUp> <C-O><C-U>
 	imap <PageDown> <C-O><C-D>
 augroup END
+
+" use groovy for Jenkinsfiles
+au BufNewFile,BufRead Jenkinsfile setf groovy
 
 " auto-expand %% to %:h<tab
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
