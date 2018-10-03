@@ -45,6 +45,7 @@ PLUGINS=(
     "itmammoth/doorboy.vim"
     "mattn/emmet-vim"
     "vim-syntastic/syntastic"
+    "fatih/vim-go"
 )
 
 for P in ${!PLUGINS[*]}
@@ -53,12 +54,12 @@ do
     PLUG_NAME=$(echo $REPO | cut -d'/' -f2)
     PLUG_DIR="${DIR}/${PLUG_NAME}"
 
+    printf "→ ${bold}${PLUG_NAME}${normal}: "
+
     if [ -d ${PLUG_DIR} ]
     then
         # cd and git pull
         # TODO: use printf to keep it neat on one line
-
-        printf "→ ${bold}${PLUG_NAME}${normal}: "
         cd $PLUG_DIR
         git fetch > /dev/null 2>&1
         if [[ $(git log HEAD..origin | wc -c) -ne 0 ]]
@@ -71,10 +72,8 @@ do
         fi
     else
         # clone repo
-        printf "+ Installing ${PLUG_NAME}\n"
-        git clone "git@github.com:${REPO}.git" $PLUG_DIR
+        printf "${blue}installed.${normal}"
+        git clone "git@github.com:${REPO}.git" $PLUG_DIR > /dev/null 2>&1
     echo
     fi
 done
-echo "= All finished."
-
