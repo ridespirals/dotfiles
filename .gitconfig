@@ -40,3 +40,5 @@
 	rebase = true
 [interactive]
 	singleKey = true
+[credential]
+	helper = osxkeychain
