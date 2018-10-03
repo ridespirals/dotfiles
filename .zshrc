@@ -1,7 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:$HOME/Source/go/bin:$PATH"
 export VS="$HOME/.vim-sessions"
+export GOPATH="$HOME/Source/go"
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/johnvarga/.oh-my-zsh
