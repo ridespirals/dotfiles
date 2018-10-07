@@ -24,6 +24,7 @@
         -r ${1:-HEAD})' -"
     get = fetch --all --prune
     fwl = push --force-with-lease
+    sui = submodule update --init
 [http]
     sslverify = false
 [diff]
@@ -42,3 +43,5 @@
 	singleKey = true
 [credential]
 	helper = osxkeychain
+[submodule]
+	recurse = true
