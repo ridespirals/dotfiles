@@ -158,6 +158,7 @@ alias diffdev='git diff develop..'
 alias reb='git rebase -i develop'
 alias pushb='git push -u origin'
 alias bd='git branch -d'
+alias co='git co -'
 
 # preview markdown files
 rmd() {
