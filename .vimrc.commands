@@ -14,3 +14,6 @@ function! QuickFixOpenAll()
 endfunction
 
 command! QuickFixOpenAll call QuickFixOpenAll()
+
+" format json
+com! FormatJson %!python -m json.tool
