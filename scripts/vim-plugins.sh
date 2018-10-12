@@ -29,6 +29,14 @@ normal=$(tput sgr0)
 
 DIR="$HOME/.vim/bundle"
 PLUGINS=(
+    "ajh17/VimCompletesMe"
+    "dracula/vim"
+    "fatih/vim-go"
+    "itmammoth/doorboy.vim"
+    "junegunn/fzf"
+    "junegunn/fzf.vim"
+    "mattn/emmet-vim"
+    "mileszs/ack.vim"
     "tpope/vim-characterize"
     "tpope/vim-commentary"
     "tpope/vim-dotenv"
@@ -36,17 +44,10 @@ PLUGINS=(
     "tpope/vim-repeat"
     "tpope/vim-surround"
     "tpope/vim-unimpaired"
-    "junegunn/fzf"
-    "junegunn/fzf.vim"
-    "mileszs/ack.vim"
-    "vim-airline/vim-airline"
-    "dracula/vim"
     "pangloss/vim-javascript"
-    "ajh17/VimCompletesMe"
-    "itmammoth/doorboy.vim"
-    "mattn/emmet-vim"
+    "vim-airline/vim-airline"
+    "vim-scripts/dbext.vim"
     "vim-syntastic/syntastic"
-    "fatih/vim-go"
 )
 
 for P in ${!PLUGINS[*]}
