@@ -73,7 +73,6 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
-
 " paired - [v ]v for tabs
 nnoremap <silent> [v :tabp<CR>
 nnoremap <silent> ]v :tabn<CR>
@@ -93,6 +92,8 @@ nnoremap <silent> <D-k> {
 autocmd FileType javascript map <buffer> <D-k> }
 autocmd FileType javascript map <buffer> <D-j> {
 
+" F4 to format json
+map <F4> :FormatJson<CR>
 " F8 to indent entire document
 map <F8> gg=G
 " F7 to highlight all trailing whitepsace
