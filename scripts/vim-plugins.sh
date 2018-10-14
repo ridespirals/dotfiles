@@ -79,3 +79,4 @@ do
     echo
     fi
 done
+printf "${bold}${green}✓${normal} ${bold}Finished.${normal}\n"
