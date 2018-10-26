@@ -16,10 +16,11 @@ if [ ! -d "${HOME}/.vim/colors" ]
 then
     # color schemes not in place, copy it over
     # TODO: get colors online? copy from dotfiles?
-    echo "++ Colors not found! Go get zenburn somewhere."
-    mkdir -p ~/.vim/colors
-    cp ./vimfiles/colors/zenburn.vim ~/.vim/colors
-    cp ./vimfiles/colors/solarized.vim ~/.vim/colors
+    echo "++ vim colors not found, copying schemes."
+    mkdir -p "${HOME}/.vim/colors"
+    mkdir "${HOME}/.vim/autoload"
+    cp -R ./vimfiles/colors "${HOME}/.vim/colors"
+    cp -R ./vimfiles/autoload "${HOME}/.vim/autoload"
 fi
 
 bold=$(tput bold)
