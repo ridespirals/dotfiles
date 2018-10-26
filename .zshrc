@@ -160,6 +160,9 @@ alias pushb='git push -u origin'
 alias bd='git branch -d'
 alias co='git co -'
 
+# easier to run `npm start`
+alias ns='npm start'
+
 # preview markdown files
 rmd() {
     pandoc $1 | lynx -stdin
