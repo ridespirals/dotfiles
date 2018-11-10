@@ -24,6 +24,7 @@ set wildmode=list:longest " only autocomplete up to ambiguity
 set shortmess=atI " fix some Press Enter messages
 set nocompatible
 set foldmethod=marker " marker folding [ {{{ /.../ }}} ]
+set iskeyword+=- " add - to word text-object characters
 
 " split to the right and down
 set splitbelow
