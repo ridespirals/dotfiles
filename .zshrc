@@ -128,7 +128,7 @@ alias yu='yarn upgrade-interactive'
 # shortcut editors
 alias ez='vim ${HOME}/.zshrc'
 # default tree showing disk usage
-alias tree='tree --du -h'
+alias tree='tree --du -h -I node_modules'
 # better settings for less
 alias less='less -m -N -g -i -J --underline-special --SILENT'
 
