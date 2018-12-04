@@ -163,6 +163,11 @@ nnoremap <Leader>eg <C-w>s<C-w>j<C-w>L:e ~/.gitconfig<CR>
 nnoremap <Leader>eb <C-w>s<C-w>j<C-w>L:e ~/.bash_profile<CR>
 nnoremap <Leader>ez <C-w>s<C-w>j<C-w>L:e ~/.zshrc<CR>
 
+" copy to system clipboard
+map gy "*y
+" copy whole file to system clipboard
+map gY gg"*yG
+
 " fugitive bindings
 nnoremap ,s :above Gstatus<CR>
 nnoremap ,c :above Gcommit<CR>
