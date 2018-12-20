@@ -164,6 +164,11 @@ alias co='git co -'
 # easier to run `npm start`
 alias ns='npm start'
 
+# validate jenkinsfiles
+validate-jenkins() {
+    curl 'http://jenkins.inviewcloud.com/pipeline-model-converter/validate' -F "jenkinsfile=<Jenkinsfile"
+}
+
 # preview markdown files
 rmd() {
     pandoc $1 | lynx -stdin
