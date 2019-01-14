@@ -31,6 +31,7 @@ normal=$(tput sgr0)
 DIR="$HOME/.vim/bundle"
 PLUGINS=(
     "ajh17/VimCompletesMe"
+    "AndrewRadev/splitjoin.vim"
     "digitaltoad/vim-pug"
     "dracula/vim"
     "editorconfig/editorconfig-vim"
