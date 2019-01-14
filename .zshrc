@@ -70,6 +70,8 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 # export MANPATH="/usr/local/man:$MANPATH"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir_writable dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs time)
@@ -173,3 +175,11 @@ validate-jenkins() {
 rmd() {
     pandoc $1 | lynx -stdin
 }
+
+_dotnet_zsh_complete() {
+    local dotnetPath=$words[1]
+    local completions=("$(dotnet complete "$words")")
+    reply=( "${(ps:\n:)completions}" )
+}
+compctl -K _dotnet_zsh_complete dotnet
+
