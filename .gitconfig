@@ -45,3 +45,5 @@
 	helper = osxkeychain
 [submodule]
 	recurse = true
+[url "ssh://git@heroku.com/"]
+	insteadOf = https://git.heroku.com/
