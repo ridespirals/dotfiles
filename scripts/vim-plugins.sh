@@ -50,6 +50,7 @@ PLUGINS=(
     "tpope/vim-unimpaired"
     "pangloss/vim-javascript"
     "vim-airline/vim-airline"
+    "vim-airline/vim-airline-themes"
     "vim-scripts/dbext.vim"
     "vim-syntastic/syntastic"
 )
