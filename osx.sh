@@ -5,6 +5,9 @@ sudo pmset -a hibernatemode 0
 # disable Sudden Motion Sensor (for SSD-only systems)
 sudo pmset -a sms 0
 
+# enable three-finger drag
+defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerSwipeGesture -int 1
+
 # set default screenshot location
 screenshots="Documents/Screenshots"
 if [ ! -d "$HOME/$screenshots" ]
