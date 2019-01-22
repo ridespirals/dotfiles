@@ -68,6 +68,12 @@ then
     ln -s "$DOTFILES/DefaultKeyBinding.dict" "$HOME/Library/KeyBindings/DefaultKeyBinding.dict"
 fi
 
+# create updater script
+if [ ! -f "/usr/local/bin/updates" ]
+then
+    echo "sh $DOTFILES/scripts/homebrew\nsh $DOTFILES/scripts/vim-plugins.sh" > /usr/local/bin/updates
+    chmod +x /usr/local/bin/updates
+fi
 
 # SSH setup (for github)
 # ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
