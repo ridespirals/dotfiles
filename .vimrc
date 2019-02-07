@@ -204,6 +204,11 @@ let g:syntastic_mode_map = {'mode': 'passive'}
 " always populate errors list (not sure i want to use this yet)
 " let g:syntastic_always_populate_loc_list = 1
 
+" tig bindings - have to manually redraw screen after to get rid of "Press
+" Enter" prompt
+nnoremap <silent> ,t :!tig %<CR><C-l>
+nnoremap <silent> ,T :!tig<CR><C-l>
+
 " load custom commands from separate file
 if filereadable(expand("~/.vimrc.commands"))
     source ~/.vimrc.commands
