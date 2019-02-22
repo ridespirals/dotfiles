@@ -40,6 +40,10 @@ if [ ! -f "$HOME/.gitconfig" ]
 then
     ln -s "$DOTFILES/.gitconfig" "$HOME/.gitconfig"
 fi
+if [ ! -f "$HOME/.tigrc" ]
+then
+    ln -s "$DOTFILES/.tigrc" "$HOME/.tigrc"
+fi
 
 # link homebrew update script
 if [ ! -f /usr/local/bin/bb ]

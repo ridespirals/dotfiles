@@ -1,0 +1,4 @@
+
+bind generic P parent
+bind generic T !@sh -c "git show -s --format=%H %(commit) | pbcopy"
+
