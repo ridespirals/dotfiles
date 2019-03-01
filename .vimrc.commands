@@ -17,3 +17,13 @@ command! QuickFixOpenAll call QuickFixOpenAll()
 
 " format json
 com! FormatJson %!jj -p
+
+" escape html
+nnoremap <Leader>h :'[,']call HtmlEscape()<CR>
+vnoremap <Leader>h :call HtmlEscape()<CR>
+
+function HtmlEscape()
+    silent s/&/\&amp;/eg
+    silent s/</\&lt;/eg
+    silent s/>/\&gt;/eg
+endfunction
