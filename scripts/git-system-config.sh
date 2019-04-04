@@ -18,3 +18,10 @@
 # git config --system user.signingKey $KEYID
 # git config --system commit.gpgSign true
 
+#########################
+
+red=$(tput setaf 1)
+green=$(tput setaf 2)
+normal=$(tput sgr0)
+bold=$(tput bold)
+printf "${red}${bold}NOTE!!${normal} ${green}open this script and read me, all code is commented out${normal}\n"
