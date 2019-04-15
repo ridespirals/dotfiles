@@ -45,6 +45,7 @@ PLUGINS=(
     "itmammoth/doorboy.vim"
     "junegunn/fzf"
     "junegunn/fzf.vim"
+    "OrangeT/vim-csharp"
     "mattn/emmet-vim"
     "mileszs/ack.vim"
     "tpope/vim-characterize"
