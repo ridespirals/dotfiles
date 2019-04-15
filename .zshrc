@@ -129,6 +129,8 @@ alias hgin='hg incoming | grep changeset | wc -l'
 alias yu='yarn upgrade-interactive'
 # shortcut editors
 alias ez='vim ${HOME}/.zshrc'
+alias ev='vim ${HOME}/.vimrc'
+alias evp='vim ${DOTFILES}/scripts/vim-plugins.sh'
 # default tree showing disk usage
 alias tree='tree --du -h -I node_modules'
 # better settings for less
