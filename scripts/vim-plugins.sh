@@ -23,6 +23,11 @@ then
     cp -R ./vimfiles/autoload "${HOME}/.vim/autoload"
 fi
 
+if [ ! -f "${HOME}/.vim/filetype.vim" ]
+then
+    cp -R ./vimfiles/filetype.vim "${HOME}/.vim/filetype.vim"
+fi
+
 bold=$(tput bold)
 blue=$(tput setaf 4)
 green=$(tput setaf 2)
