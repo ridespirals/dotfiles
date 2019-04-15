@@ -55,7 +55,7 @@ PLUGINS=(
     "tpope/vim-repeat"
     "tpope/vim-surround"
     "tpope/vim-unimpaired"
-    "pangloss/vim-javascript"
+    "neoclide/vim-jsx-improve"
     "vim-airline/vim-airline"
     "vim-airline/vim-airline-themes"
     "vim-scripts/dbext.vim"
