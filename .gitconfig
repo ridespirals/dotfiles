@@ -25,6 +25,7 @@
     get = fetch --all --prune
     fwl = push --force-with-lease
     sui = submodule update --init
+    rsh = reset --hard HEAD
 [http]
     sslverify = false
 [diff]
