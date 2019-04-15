@@ -1,20 +1,28 @@
+blue=$(tput setaf 153)
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+function info() {
+  printf "${blue}${bold}$1${normal}\n"
+}
+
 #!/bin/sh
-printf 'Updating homebrew...'
+info 'Updating homebrew...'
 brew update
-printf ' done\n'
+info 'done'
 
-printf 'Upgrading formulae...'
+info 'Upgrading formulae...'
 brew upgrade
-printf ' done\n'
+info 'done'
 
-printf 'Upgrading casks...'
+info 'Upgrading casks...'
 brew cask upgrade
-printf ' done\n'
+info 'done'
 
-printf "Deleting old formulae..."
+info 'Deleting old formulae...'
 brew cleanup
+info 'done'
 
-printf "Checking system..."
+info 'Checking system...'
 brew doctor
-printf ' done\n'
-
+info 'done'
