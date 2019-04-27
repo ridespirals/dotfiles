@@ -40,6 +40,7 @@ PLUGINS=(
     "digitaltoad/vim-pug"
     "dracula/vim"
     "editorconfig/editorconfig-vim"
+    "ervandew/supertab"
     "etdev/vim-hexcolor"
     "fatih/vim-go"
     "itmammoth/doorboy.vim"
