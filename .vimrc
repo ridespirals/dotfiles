@@ -169,8 +169,8 @@ map gy "*y
 map gY gg"*yG
 
 " fugitive bindings
-nnoremap ,s :above Gstatus<CR>
-nnoremap ,c :above Gcommit<CR>
+nnoremap ,s :below Gstatus<CR>
+nnoremap ,c :below Gcommit<CR>
 nnoremap ,d :Gdiff<CR>
 
 " [fzf] - fuzzy finding
