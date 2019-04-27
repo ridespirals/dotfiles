@@ -135,6 +135,8 @@ alias evp='vim ${DOTFILES}/scripts/vim-plugins.sh'
 alias tree='tree --du -h -I node_modules'
 # better settings for less
 alias less='less -m -N -g -i -J --underline-special --SILENT'
+# open tig stash fast
+alias ts='tig stash'
 
 # git aliases
 alias lg='git lg'
