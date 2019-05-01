@@ -1,4 +1,10 @@
 
 bind generic P parent
+
+# copy selected commit hash
 bind generic T !@sh -c "git show -s --format=%H %(commit) | pbcopy"
+
+# Stashes
+bind D !?git stash drop %(stash)
+bind A !?git stash apply %(stash)
 
