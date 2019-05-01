@@ -170,6 +170,10 @@ alias co='git co -'
 # easier to run `npm start`
 alias ns='npm start'
 
+# quick http GET/POST
+alias get='curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET $1'
+alias post='curl --data "$2" $1'
+
 # validate jenkinsfiles
 validate-jenkins() {
     curl 'http://jenkins.inviewcloud.com/pipeline-model-converter/validate' -F "jenkinsfile=<Jenkinsfile"
