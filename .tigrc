@@ -5,6 +5,5 @@ bind generic P parent
 bind generic T !@sh -c "git show -s --format=%H %(commit) | pbcopy"
 
 # Stashes
-bind D !?git stash drop %(stash)
-bind A !?git stash apply %(stash)
-
+bind stash D !?git stash drop %(stash)
+bind stash A !?git stash apply %(stash)
