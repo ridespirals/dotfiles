@@ -140,7 +140,7 @@ alias ts='tig stash'
 
 # git aliases
 alias lg='git lg'
-alias lga='git lg --all'
+alias lga='git lg --branches --remotes --tags'
 alias s='git status -s --branch'
 alias st='git status'
 alias gs='git status'
