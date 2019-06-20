@@ -137,6 +137,7 @@ alias tree='tree --du -h -I node_modules'
 alias less='less -m -N -g -i -J --underline-special --SILENT'
 # open tig stash fast
 alias ts='tig stash'
+alias tiga='tig --all'
 
 # git aliases
 alias lg='git lg'

@@ -1,3 +1,4 @@
+bind generic ; prompt
 
 bind generic P parent
 
@@ -7,3 +8,5 @@ bind generic T !@sh -c "git show -s --format=%H %(commit) | pbcopy"
 # Stashes
 bind stash D !?git stash drop %(stash)
 bind stash A !?git stash apply %(stash)
+
+color cursor white red bold
