@@ -1,3 +1,5 @@
+#!/bin/sh
+
 blue=$(tput setaf 153)
 bold=$(tput bold)
 normal=$(tput sgr0)
@@ -6,7 +8,6 @@ function info() {
   printf "${blue}${bold}$1${normal}\n"
 }
 
-#!/bin/sh
 info 'Updating homebrew...'
 brew update
 info 'done'

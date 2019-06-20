@@ -133,6 +133,8 @@ alias ev='vim ${HOME}/.vimrc'
 alias evp='vim ${DOTFILES}/scripts/vim-plugins.sh'
 # default tree showing disk usage
 alias tree='tree --du -h -I node_modules'
+# default du to human readable sizes
+alias du='du -h'
 # better settings for less
 alias less='less -m -N -g -i -J --underline-special --SILENT'
 # open tig stash fast
