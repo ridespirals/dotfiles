@@ -23,7 +23,8 @@ set wildmenu " show other option in autocomplete
 set wildmode=longest:list,full " only autocomplete up to ambiguity
 set shortmess=atI " fix some Press Enter messages
 set nocompatible
-set foldmethod=marker " marker folding [ {{{ /.../ }}} ]
+set foldmethod=syntax " syntax folding (adding {{{/}}} to files sucks)
+set nofoldenable " this makes it so folding doesn't happen when opening a file
 set iskeyword+=- " add - to word text-object characters
 
 " split to the right and down
