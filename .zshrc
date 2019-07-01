@@ -144,7 +144,7 @@ alias tiga='tig --all'
 # git aliases
 alias lg='git lg'
 alias lga='git lg --branches --remotes --tags'
-alias s='git status -s --branch'
+alias s='git status --short --branch'
 alias st='git status'
 alias gs='git status'
 alias gd='git diff'
