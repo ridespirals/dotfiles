@@ -94,6 +94,9 @@ nnoremap <silent> <D-k> {
 autocmd FileType javascript map <buffer> <D-k> }
 autocmd FileType javascript map <buffer> <D-j> {
 
+" press F5 to run Go scripts
+autocmd FileType go map <buffer> <F5> :GoRun %<CR>
+
 " F4 to format json
 map <F4> :FormatJson<CR>
 " F8 to indent entire document
