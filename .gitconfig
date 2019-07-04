@@ -30,7 +30,7 @@
     sslverify = false
 [diff]
     tool = vimdiff
-    algorithm = patience
+    algorithm = histogram
 [merge]
     tool = vimdiff
     conflictstyle = diff3
