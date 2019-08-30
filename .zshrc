@@ -165,9 +165,9 @@ alias mt='git mergetool'
 alias ss='git stash'
 alias pp='git stash pop'
 alias diffdev='git diff develop..'
-alias reb='git rebase -i develop'
 alias pushb='git push -u origin'
 alias bd='git branch -d'
+alias bD='git branch -D'
 alias co='git co -'
 
 # easier to run `npm start`
