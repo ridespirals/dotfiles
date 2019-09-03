@@ -57,6 +57,10 @@ let g:netrw_browse_split=0 " open file by re-using same window
 nnoremap <Leader>j <C-d>
 nnoremap <Leader>k <C-u>
 
+"" in insert mode, having home and end available is nice
+imap <c-l> <End>
+imap <c-h> <Home>
+
 " splits - window
 nmap <leader>sw<left>	:topleft vnew<CR>
 nmap <leader>sw<right>	:botright vnew<CR>
