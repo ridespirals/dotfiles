@@ -217,6 +217,15 @@ let g:syntastic_mode_map = {'mode': 'passive'}
 nnoremap <silent> ,t :!tig %<CR><C-l>
 nnoremap <silent> ,T :!tig<CR><C-l>
 
+" Prettier formatter - run on save
+" noremap <Leader>f :PrettierAsync<CR>
+nmap <Leader>f <Plug>(Prettier)
+
+" autoformat on save for visualize only (so hacky i know but i'm not ready to
+" do it to everything)
+let g:prettier#autoFormat = 0
+autocmd BufWritePre */visualize/*.{js,jsx,css,html} PrettierAsync
+
 " load custom commands from separate file
 if filereadable(expand("~/.vimrc.commands"))
     source ~/.vimrc.commands
