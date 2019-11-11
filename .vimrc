@@ -38,7 +38,6 @@ nnoremap <Space> <Nop>
 
 " remap ; <=> :
 nnoremap ; :
-"nnoremap : :
 
 " find something to use for ; and , since i would like to use them but
 " having ; mapped to : is too useful
@@ -52,10 +51,6 @@ nmap <silent> <Leader>s :set nolist!<CR>
 set backspace=2 " allow backspacing in insert mode over previously-written text (same as indent,eol.start
 let g:netrw_liststyle=3 " make default :Explore style nicer
 let g:netrw_browse_split=0 " open file by re-using same window
-
-" alternate half-page up/down
-nnoremap <Leader>j <C-d>
-nnoremap <Leader>k <C-u>
 
 "" in insert mode, having home and end available is nice
 imap <c-l> <End>
@@ -107,8 +102,6 @@ map <F4> :FormatJson<CR>
 map <F8> gg=G
 " F7 to highlight all trailing whitepsace
 map <F7> :/\s\+$/<CR>
-" F9 to delete all trailing whitespace
-map <F9> :%s/\s\+$//g<CR>
 
 " diff mode
 map <F9> :diffget local<CR>
@@ -119,9 +112,6 @@ nmap <silent> // :nohlsearch<CR>:call clearmatches()<CR>
 
 " Vim reload current file (v)im (r)eload
 nmap <silent> <Leader>vr :so %<CR>
-
-" (h)tml (p)review
-nmap <silent> <Leader>hp :!open -a Firefox %<CR><CR>
 
 " syntax highlighting in conemu
 syntax on " syntax highlighting
@@ -174,11 +164,6 @@ nnoremap <Leader>ev <C-w>s<C-w>j<C-w>L:e ~/.vimrc<CR>
 nnoremap <Leader>eg <C-w>s<C-w>j<C-w>L:e ~/.gitconfig<CR>
 nnoremap <Leader>eb <C-w>s<C-w>j<C-w>L:e ~/.bash_profile<CR>
 nnoremap <Leader>ez <C-w>s<C-w>j<C-w>L:e ~/.zshrc<CR>
-
-" copy to system clipboard
-map gy "*y
-" copy whole file to system clipboard
-map gY gg"*yG
 
 " fugitive bindings
 nnoremap ,s :below Gstatus<CR>
