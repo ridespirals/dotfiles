@@ -110,6 +110,10 @@ map <F7> :/\s\+$/<CR>
 " F9 to delete all trailing whitespace
 map <F9> :%s/\s\+$//g<CR>
 
+" diff mode
+map <F9> :diffget local<CR>
+map <F10> :diffget remote<CR>
+
 " Clear current search highlight by tapping //
 nmap <silent> // :nohlsearch<CR>:call clearmatches()<CR>
 
