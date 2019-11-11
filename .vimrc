@@ -169,6 +169,7 @@ nnoremap <Leader>ez <C-w>s<C-w>j<C-w>L:e ~/.zshrc<CR>
 nnoremap ,s :below Gstatus<CR>
 nnoremap ,c :below Gcommit<CR>
 nnoremap ,d :Gdiff<CR>
+nnoremap ,B :Gblame<CR>
 
 " [fzf] - fuzzy finding
 " fuzzy finding tracked files
