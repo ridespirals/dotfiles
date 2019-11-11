@@ -182,6 +182,12 @@ validate-jenkins() {
     curl 'http://jenkins.inviewcloud.com/pipeline-model-converter/validate' -F "jenkinsfile=<Jenkinsfile"
 }
 
+# git fixup easy (fix <hash>)
+git_fixup() {
+    git commit --fixup="$1"
+}
+alias fix=git_fixup
+
 # preview markdown files
 rmd() {
     pandoc $1 | lynx -stdin
