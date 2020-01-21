@@ -140,6 +140,8 @@ alias less='less -m -N -g -i -J --underline-special --SILENT'
 # open tig stash fast
 alias ts='tig stash'
 alias tiga='tig --all'
+# shortcut for stashing in patch mode
+alias stash='git stash save -p "$1"'
 
 # git aliases
 alias lg='git lg'
@@ -166,9 +168,13 @@ alias ss='git stash'
 alias pp='git stash pop'
 alias diffdev='git diff develop..'
 alias pushb='git push -u origin'
+alias delb='git push --delete origin'
 alias bd='git branch -d'
 alias bD='git branch -D'
 alias co='git co -'
+
+# open reflog in tig
+alias refs='git reflog --pretty=raw | tig --pretty=raw'
 
 # easier to run `npm start`
 alias ns='npm start'
@@ -187,6 +193,12 @@ git_fixup() {
     git commit --fixup="$1"
 }
 alias fix=git_fixup
+
+# fast-foward arbitrary branch without checking it out
+fastFowardBranch() {
+    git fetch origin "$1":"$1"
+}
+alias ff=fastFowardBranch
 
 # preview markdown files
 rmd() {
