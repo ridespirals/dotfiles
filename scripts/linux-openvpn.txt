@@ -1,0 +1,12 @@
+ 
+   systemctl status openvpn@mullvad_us
+   systemctl restart openvpn@mullvad_us
+   sudo service openvpn restart
+
+
+   # print all network connections
+   nmcli con
+
+   sudo dhclient -v -r enp12s0
+   sudo dhclient -v enp12s0
+
