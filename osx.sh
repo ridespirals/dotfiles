@@ -1,3 +1,9 @@
+# logging colors
+bold=$(tput bold)
+blue=$(tput setaf 4)
+green=$(tput setaf 2)
+normal=$(tput sgr0)
+
 # disable hibernate (faster sleeps)
 sudo pmset -a hibernatemode 0
 # can then "sudo rm /var/vm/sleepimage" to save space
@@ -20,30 +26,25 @@ fi
 DOTFILES="${HOME}/source/dotfiles"
 
 # link up dotfiles
-if [ ! -f "$HOME/.zshrc" ]
-then
-    ln -s "$DOTFILES/.zshrc" "$HOME/.zshrc"
-fi
-if [ ! -f "$HOME/.inputrc" ]
-then
-    ln -s "$DOTFILES/.inputrc" "$HOME/.inputrc"
-fi
-if [ ! -f "$HOME/.vimrc" ]
-then
-    ln -s "$DOTFILES/.vimrc" "$HOME/.vimrc"
-fi
-if [ ! -f "$HOME/.vimrc.commands" ]
-then
-    ln -s "$DOTFILES/.vimrc.commands" "$HOME/.vimrc.commands"
-fi
-if [ ! -f "$HOME/.gitconfig" ]
-then
-    ln -s "$DOTFILES/.gitconfig" "$HOME/.gitconfig"
-fi
-if [ ! -f "$HOME/.tigrc" ]
-then
-    ln -s "$DOTFILES/.tigrc" "$HOME/.tigrc"
-fi
+FILES=(
+    ".zshrc"
+    ".inputrc"
+    ".vimrc"
+    ".vimrc.commands"
+    ".gitconfig"
+    ".tigrc"
+)
+for ITEM in ${!FILES[*]}
+do
+    F=${FILES[ITEM]}
+    if [ ! -f "$HOME/$F" ]
+    then
+        ln -s "$DOTFILES/$F" "$HOME/$F"
+        printf "+ linked ${bold}${F}${normal} ${green}successfully${normal}.\n"
+    else
+        printf "+ ${bold}${F}${normal} ${blue}already exists${normal}.\n"
+    fi
+done
 
 # link homebrew update script
 if [ ! -f /usr/local/bin/bb ]
