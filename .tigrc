@@ -10,3 +10,6 @@ bind stash D !?git stash drop %(stash)
 bind stash A !?git stash apply %(stash)
 
 color cursor white red bold
+
+color main-head white blue bold
+color main-ref black cyan
