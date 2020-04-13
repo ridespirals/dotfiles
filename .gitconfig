@@ -9,6 +9,7 @@
     amend = commit -a --amend
     lg = log --graph --pretty=format:'%C(red)%h%Creset -%C(yellow reverse)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     ll = log --graph --pretty=format:'%C(red)%h%Creset -%C(magenta)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lga = lg --all --first-parent
     ref = reflog
     branches = branch -avv
     co = checkout

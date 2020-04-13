@@ -140,6 +140,7 @@ alias less='less -m -N -g -i -J --underline-special --SILENT'
 # open tig stash fast
 alias ts='tig stash'
 alias tiga='tig --all'
+alias ta='tig --all'
 # shortcut for stashing in patch mode
 alias stash='git stash save -p "$1"'
 
@@ -152,8 +153,8 @@ alias gs='git status'
 alias gd='git diff'
 alias dc='git diff --cached'
 alias a='git add -u'
-alias ap='git add -p'
-alias ai='git add -i'
+alias ap='git add --patch'
+alias ai='git add --interactive'
 alias cm='git commit --verbose --message'
 alias amend='git commit --amend --no-edit'
 alias cma='git commit --amend'
