@@ -69,16 +69,16 @@ PLUGINS=(
 for P in ${!PLUGINS[*]}
 do
     REPO=${PLUGINS[P]}
-    PLUG_NAME=$(echo $REPO | cut -d'/' -f2)
+    PLUG_NAME=$(echo "$REPO" | cut -d'/' -f2)
     PLUG_DIR="${DIR}/${PLUG_NAME}"
 
-    printf "→ ${bold}${PLUG_NAME}${normal}: "
+    printf "→ ${bold}%s${normal}: " "$PLUG_NAME"
 
-    if [ -d ${PLUG_DIR} ]
+    if [ -d "$PLUG_DIR" ]
     then
         # cd and git pull
         # TODO: use printf to keep it neat on one line
-        cd $PLUG_DIR
+        cd "$PLUG_DIR" || exit
         git fetch > /dev/null 2>&1
         if [[ $(git log HEAD..origin | wc -c) -ne 0 ]]
         then
@@ -91,7 +91,7 @@ do
     else
         # clone repo
         printf "${blue}installed.${normal}"
-        git clone "git@github.com:${REPO}.git" $PLUG_DIR > /dev/null 2>&1
+        git clone "git@github.com:${REPO}.git" "$PLUG_DIR" > /dev/null 2>&1
     echo
     fi
 done
