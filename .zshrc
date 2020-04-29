@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="/usr/local/sbin:$HOME/Source/go/bin:$PATH"
+export PATH="/usr/local/sbin:$HOME/Source/go/bin:$HOME/bin:$PATH"
 export DOTFILES="$HOME/source/dotfiles"
 export VS="$HOME/.vim-sessions"
 export GOPATH="$HOME/Source/go"
@@ -13,50 +13,11 @@ export ZSH=/Users/johnvarga/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -64,6 +25,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  zsh-vim-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -76,7 +38,10 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir_writable dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs time)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
-POWERLEVEL9K_SHORTEN_STRATEGY=tuncate_from_right
+POWERLEVEL9K_SHORTEN_STRATEGY=truncate_from_right
+
+MODE_CURSOR_VIINS="#ffffff steady underline"
+MODE_CURSOR_VICMD="#ffffff steady block"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -151,7 +116,11 @@ alias s='git status --short --branch'
 alias st='git status'
 alias gs='git status'
 alias gd='git diff'
+# diff cached and staged are synonyms. ds is much easier to type but dc 
+# is in my muscle memory... so use both for transition
 alias dc='git diff --cached'
+alias ds='git diff --staged'
+
 alias a='git add -u'
 alias ap='git add --patch'
 alias ai='git add --interactive'
@@ -190,86 +159,19 @@ validate-jenkins() {
 }
 
 # git fixup easy (fix <hash>)
-git_fixup() {
-    git commit --fixup="$1"
-}
-alias fix=git_fixup
-
+alias fix='!f() { git commit --fixup="$1"; }; f'
 # fast-foward arbitrary branch without checking it out
-fastFowardBranch() {
-    git fetch origin "$1":"$1"
-}
-alias ff=fastFowardBranch
+alias ff='f() { git fetch origin "$1":"$1"; }; f'
+
+alias react-tags='!f() { ctags --map-javascript=.jsx -R "$1" }; f'
+# create an empty commit (for demos)
+alias mc='f() { git commit --allow-empty -m "$1"; }; f'
 
 # preview markdown files
 rmd() {
     pandoc $1 | lynx -stdin
 }
 
-_dotnet_zsh_complete() {
-    local dotnetPath=$words[1]
-    local completions=("$(dotnet complete "$words")")
-    reply=( "${(ps:\n:)completions}" )
-}
-compctl -K _dotnet_zsh_complete dotnet
+# load completions
+[[ -f $HOME/.completions ]] && . $HOME/.completions
 
-###-begin-npm-completion-###
-#
-# npm command completion script
-#
-# Installation: npm completion >> ~/.bashrc  (or ~/.zshrc)
-# Or, maybe: npm completion > /usr/local/etc/bash_completion.d/npm
-#
-
-if type complete &>/dev/null; then
-  _npm_completion () {
-    local words cword
-    if type _get_comp_words_by_ref &>/dev/null; then
-      _get_comp_words_by_ref -n = -n @ -n : -w words -i cword
-    else
-      cword="$COMP_CWORD"
-      words=("${COMP_WORDS[@]}")
-    fi
-
-    local si="$IFS"
-    IFS=$'\n' COMPREPLY=($(COMP_CWORD="$cword" \
-                           COMP_LINE="$COMP_LINE" \
-                           COMP_POINT="$COMP_POINT" \
-                           npm completion -- "${words[@]}" \
-                           2>/dev/null)) || return $?
-    IFS="$si"
-    if type __ltrim_colon_completions &>/dev/null; then
-      __ltrim_colon_completions "${words[cword]}"
-    fi
-  }
-  complete -o default -F _npm_completion npm
-elif type compdef &>/dev/null; then
-  _npm_completion() {
-    local si=$IFS
-    compadd -- $(COMP_CWORD=$((CURRENT-1)) \
-                 COMP_LINE=$BUFFER \
-                 COMP_POINT=0 \
-                 npm completion -- "${words[@]}" \
-                 2>/dev/null)
-    IFS=$si
-  }
-  compdef _npm_completion npm
-elif type compctl &>/dev/null; then
-  _npm_completion () {
-    local cword line point words si
-    read -Ac words
-    read -cn cword
-    let cword-=1
-    read -l line
-    read -ln point
-    si="$IFS"
-    IFS=$'\n' reply=($(COMP_CWORD="$cword" \
-                       COMP_LINE="$line" \
-                       COMP_POINT="$point" \
-                       npm completion -- "${words[@]}" \
-                       2>/dev/null)) || return $?
-    IFS="$si"
-  }
-  compctl -K _npm_completion npm
-fi
-###-end-npm-completion-###
