@@ -15,7 +15,8 @@ order += "volume master"
 order += "disk /"
 order += "cpu_usage"
 order += "cpu_temperature 0"
-#order += "load"
+# order += "memory"
+order += "load"
 order += "tztime local"
 order += "ethernet enp12s0"
 
@@ -34,6 +35,12 @@ cpu_usage {
 cpu_temperature 0 {
   format = "🌡️ %degrees°C"
 }
+
+# memory {
+#     format = "%free %available (%used) / %total"
+#     threshold_degraded = "10%"
+#     format_degraded = "MEMORY: %free"
+# }
 
 volume master {
   format = "🔊 %volume"
