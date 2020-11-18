@@ -218,6 +218,8 @@ nmap <Leader>f <Plug>(Prettier)
 let g:prettier#autoFormat = 0
 autocmd BufWritePre */visualize/*.{js,jsx,css,html} PrettierAsync
 
+vnoremap <Leader>p :PrettierPartial<CR>
+
 " load custom commands from separate file
 if filereadable(expand("~/.vimrc.commands"))
     source ~/.vimrc.commands
