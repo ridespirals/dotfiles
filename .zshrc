@@ -142,6 +142,7 @@ alias delb='git push --delete origin'
 alias bd='git branch -d'
 alias bD='git branch -D'
 alias co='git co -'
+alias branch='git rev-parse --abbrev-ref HEAD'
 
 # open reflog in tig
 alias refs='git reflog --pretty=raw | tig --pretty=raw'
