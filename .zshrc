@@ -26,9 +26,14 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
   git
   zsh-vim-mode
+  zsh-history-substring-search
 )
 
 source $ZSH/oh-my-zsh.sh
+
+# get history searching with vi mode
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
 
 # User configuration
 
