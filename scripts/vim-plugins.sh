@@ -50,7 +50,6 @@ PLUGINS=(
     "OrangeT/vim-csharp"
     "mattn/emmet-vim"
     "mileszs/ack.vim"
-    "mxw/vim-jsx"
     "pangloss/vim-javascript"
     "prettier/vim-prettier"
     "tpope/vim-characterize"
