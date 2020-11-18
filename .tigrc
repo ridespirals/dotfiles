@@ -3,7 +3,13 @@ bind generic ; prompt
 bind generic P parent
 
 # copy selected commit hash
-bind generic T !@sh -c "git show -s --format=%H %(commit) | pbcopy"
+bind generic T !@sh -c "git rev-parse %(commit) | tr -d '\n' | pbcopy"
+
+# checkout selected commit
+bind generic ! !git checkout %(commit)
+
+# rebase current branch onto selected branch
+bind generic * !git rebase -i %(branch)
 
 # Stashes
 bind stash D !?git stash drop %(stash)
@@ -11,5 +17,6 @@ bind stash A !?git stash apply %(stash)
 
 color cursor white red bold
 
+color main-remote black yellow
 color main-head white blue bold
 color main-ref black cyan
