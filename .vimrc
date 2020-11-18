@@ -51,6 +51,8 @@ nmap <silent> <Leader>s :set nolist!<CR>
 set backspace=2 " allow backspacing in insert mode over previously-written text (same as indent,eol.start
 let g:netrw_liststyle=3 " make default :Explore style nicer
 let g:netrw_browse_split=0 " open file by re-using same window
+nnoremap <Leader>e :Explore<CR>
+nnoremap <Leader>l :Lexplore<CR>
 
 "" in insert mode, having home and end available is nice
 imap <c-l> <End>
