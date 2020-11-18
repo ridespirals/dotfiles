@@ -160,7 +160,7 @@ validate-jenkins() {
 }
 
 # git fixup easy (fix <hash>)
-alias fix='!f() { git commit --fixup="$1"; }; f'
+alias fix='f() { git commit --fixup="$1"; }; f'
 # fast-foward arbitrary branch without checking it out
 alias ff='f() { git fetch origin "$1":"$1"; }; f'
 
