@@ -9,4 +9,5 @@
 UUID=0310376b-0625-4659-9fec-b36ccaa5a658 /                 ext4 errors=remount-ro       0 1
 UUID=605893bc-d25b-4b9d-b394-0eef25c76df0 /media/john/Media ext4 rw,nosuid,nodev,noatime,data=ordered,uhelper=udisks2 0 2
 UUID=0d776fec-1991-4f95-8870-e641099792e4 /media/john/IO    ext4 rw,nosuid,nodev,noatime,data=ordered,uhelper=udisks2 0 2
+UUID=77569E18-82AF-554B-8CB3-9FDFCF3F006C /media/john/Quantum    zfs rw,nosuid,nodev,noatime,data=ordered,uhelper=udisks2 0 2
 /swapfile                                 none              swap sw                      0 0
