@@ -1,0 +1,50 @@
+[user]
+	name = John Varga
+	email = john.varga@unifilabs.com
+[core]
+    editor = vim
+    autocrlf = input
+    safecrlf = false
+[alias]
+    cm = !git add -A && git commit -m
+    cmp = !git add -A && git commit -m && git push
+    amend = commit -a --amend
+    lg = log --graph --pretty=format:'%C(red bold)%h%Creset -%C(yellow reverse)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    ll = log --graph --pretty=format:'%C(red bold)%h%Creset -%C(magenta reverse)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    ref = reflog
+    branches = branch -avv
+    co = checkout
+    tags = show-ref --tags
+    refs = show-ref --head --dereference
+    info = remote show origin
+    in = log HEAD..@{upstream}
+    out = log @{push}..HEAD
+    # open all modified files in EDITOR
+    editm = "!${EDITOR:-vi} $(git ls-files -m)"
+    # open all filed modified in commit in EDITOR
+    editc = "!sh -c '${EDITOR:-vi} $(git diff-tree --no-commit-id --name-only \
+        -r ${1:-HEAD})' -"
+    get = fetch --all --prune
+    fwl = push --force-with-lease
+    sui = submodule update --init
+	rsh = reset --hard HEAD
+
+[http]
+    sslverify = false
+[diff]
+    tool = vimdiff
+	algorithm = histogram
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+[mergetool]
+    prompt = false
+
+[interactive]
+	singlekey = true
+[pull]
+	rebase = true
+[rerere]
+    enabled = true
+[rebase]
+    autoSquash = true
