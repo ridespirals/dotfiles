@@ -25,5 +25,5 @@ brew cleanup
 info 'done'
 
 info 'Checking system...'
-brew doctor
+brew doctor `brew doctor --list-checks | grep -v stray_headers`
 info 'done'
