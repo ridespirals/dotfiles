@@ -1,0 +1,52 @@
+edge - get chocolatey install script
+powershell admin
+* install choco
+choco install wget curl firefox licecap notepad2 dropbox
+install git, git bash
+git bash - font consolas 12, theme dracula, window 120x36
+set up ssh
+set up aws credentials
+create c:\_ and add to PATH
+download nuget.exe to c:\_
+install .net framework (highest?) and core
+install linqpad (AE3C6-DP4JP)
+* Preferences -> Folders -> My Queries: `\\Mac\Home\Documents\LINQPad`
+*             -> Advanced -> Code Formatting -> "Place open brace..." false,false,false
+* data sources:
+    * Discover -> dev-mssql.inviewcloud.com dev 84gBwNJwMM7w2Gb3sGhX
+    * Licensing -> dev-mssql.inviewcloud.com dev 84gBwNJwMM7w2Gb3sGhX
+
+
+parallels machine
+* cpu and memory
+* disable app sharing
+* preferences -> keyboard shortcuts
+  * add option+backspace as ctrl+backspace (it defaults to some weird Undo or something)
+* view -> customize touch bar
+  * visual studio: f3, f5, f9, f10, f11, f12
+  * git bash: insert
+
+windows settings
+* turn off uac
+* turn off windows firewall
+* windows defender exclusions:
+  - c:\source
+  - %localappdata%\JetBrains\Transient
+  - devenv.exe
+  - msbuild.exe
+
+* explorer - view -> Show file name extensions
+
+visual studio
+* resharper (+config)
+* nexus (nuget sources)
+* tools -> options -> Projects and Solutions -> Locations -> "c:\source"
+* nuget package sources:
+- Local package source: C:\Users\User\AppData\Local\NuGet\Local
+- nexus: https://nexus.inviewcloud.com/repository/nuget-develop
+- nexus (public): https://nexus.inviewcloud.com/repository/nuget-public
+
+autodesk
+* install desktop app: https://www.autodesk.com/desktop-app
+* revit license server: adlm.inviewcloud.com
+
