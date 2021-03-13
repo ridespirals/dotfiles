@@ -1,0 +1,36 @@
+edge - get chocolatey install script
+powershell admin
+* install choco
+choco install wget curl firefox licecap notepad2 dropbox
+install git, git bash
+git bash - font consolas 12, theme dracula, window 120x36
+set up ssh
+set up aws credentials
+create c:\_ and add to PATH
+download nuget.exe to c:\_
+install .net framework (highest?) and core
+
+
+parallels machine
+* cpu and memory
+* disable app sharing 
+* view -> customize touch bar
+  * visual studio: f3, f5, f9, f10, f11, f12
+  * git bash: insert
+  
+  
+windows settings
+* turn off uac
+* turn off windows firewall
+* windows defender exclusions:
+  - c:\source
+  - %localappdata%\JetBrains\Transient
+  - devenv.exe
+  - msbuild.exe
+
+* explorer - view -> Show file name extensions
+
+visual studio
+* resharper (+config)
+* nexus (nuget sources)
+* tools -> options -> Projects and Solutions -> Locations -> "c:\source"
