@@ -21,7 +21,7 @@ brew upgrade --cask
 info 'done'
 
 info 'Deleting old formulae...'
-brew cleanup
+brew cleanup --prune=all
 info 'done'
 
 info 'Checking system...'
