@@ -26,7 +26,6 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
   git
   zsh-vim-mode
-  zsh-history-substring-search
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -181,3 +180,5 @@ rmd() {
 # load completions
 [[ -f $HOME/.completions ]] && . $HOME/.completions
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
