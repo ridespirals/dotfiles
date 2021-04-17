@@ -20,6 +20,8 @@ alias directories='ls -1p | grep "/$" | sed "s/\/$//"'
 alias hgin='hg incoming | grep changeset | wc -l'
 # helpful yarn command
 alias yu='yarn upgrade-interactive'
+# monitor sleep
+alias monitorsleep='xset -display :0.0 dpms force off'
 
 # git aliases
 alias lg='git lg'
