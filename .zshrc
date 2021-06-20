@@ -104,6 +104,7 @@ alias evp='vim ${DOTFILES}/scripts/vim-plugins.sh'
 alias tree='tree --du -h -I node_modules'
 # default du to human readable sizes
 alias du='du -h'
+alias df='df -h'
 # better settings for less
 alias less='less -m -N -g -i -J --underline-special --SILENT'
 # open tig stash fast
