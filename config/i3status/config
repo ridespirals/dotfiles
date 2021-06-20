@@ -13,6 +13,9 @@ general {
 
 order += "volume master"
 order += "disk /"
+order += "disk /media/john/Media"
+order += "disk /media/john/IO"
+order += "disk /media/john/Quantum"
 order += "cpu_usage"
 order += "cpu_temperature 0"
 # order += "memory"
@@ -21,7 +24,19 @@ order += "tztime local"
 order += "ethernet enp12s0"
 
 disk "/" {
-    format = "disk: %avail"
+    format = "/: %avail"
+}
+
+disk /media/john/Media {
+    format = "Media: %avail"
+}
+
+disk /media/john/IO {
+    format = "IO: %avail"
+}
+
+disk /media/john/Quantum {
+    format = "quantum: %avail"
 }
 
 ethernet enp12s0 {
