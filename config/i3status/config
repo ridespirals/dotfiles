@@ -22,6 +22,7 @@ order += "cpu_temperature 0"
 order += "load"
 order += "tztime local"
 order += "ethernet enp12s0"
+order += "ethernet tun0"
 
 disk "/" {
     format = "/: %avail"
@@ -40,6 +41,10 @@ disk /media/john/Quantum {
 }
 
 ethernet enp12s0 {
+  format_up = "%ip"
+}
+
+ethernet tun0 {
   format_up = "%ip"
 }
 
