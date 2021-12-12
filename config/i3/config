@@ -206,9 +206,11 @@ client.unfocused         #$bgcolor #$bgcolor #$fgcolor
 client.focused_inactive  #$bgcolor #$bgcolor #$fgcolor
 client.urgent            #$bgcolor #$bgcolor #$urgent
 
-# set desktop background (use feh later)
-# exec --no-startup-id xsetroot -solid "#019875" # pantone emerald
-exec --no-startup-id feh --bg-scale /home/john/Dropbox/symlinks/Backgrounds/wallhaven-50906.png
+# set desktop background
+exec --no-startup-id feh --bg-scale /home/john/Dropbox/symlinks/Backgrounds/wallpaper-720506.png
+
+# dark damask
+# exec --no-startup-id feh --bg-scale /home/john/Dropbox/symlinks/Backgrounds/wallpaper-41041.png
 
 # map caps->escape
 exec --no-startup-id setxkbmap -layout us -option caps:escape
