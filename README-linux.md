@@ -8,13 +8,14 @@
     sudo systemctl restart systemd-resolved.service
 
 # mouse pointer speed
-1. xinput
-  - lists devices, look for named mice, usually multiple entries
-2. xinput list-props <id>
-  - the pointer speed is 'libinput Accel Speed', which is listed atm as
-  - the full name of the prop, not including the parens at the end
-  - i've found -0.65 to be a good speed
-3. xinput set-prop <id> <prop> <value>
+Edit `/usr/share/X11/xorg.conf.d/40-libinput.conf`
+
+add 2 lines to the first section before `EndSection`:
+
+```
+    Option "AccelProfile" "flat"
+    Option "AccelSpeed" "1.05"
+```
 
 # what processes do not "want to sleep"
 - systemd-inhibit
