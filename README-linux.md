@@ -36,4 +36,23 @@ add 2 lines to the first section before `EndSection`:
     glxinfo | grep -i "vendor\|rendering"
     grep LoadModule /var/log/Xorg.0.log
 
+# volume / sound
+
+alsamixer
+(also pulseaudio)
+
+# zfs/zpool
+
+> I unplugged everything from the mobo and plugged the sata cables in a different order, my zfs drive moved from sdd to sda. every other drive mounted fine but i had to re-import zfs. also not sure if i'll need to do this again next boot to make it permanent. ultimately it was real easy
+
+```
+    sudo zpool import
+```
+
+listed the pool just fine, and all i had to do was
+
+```
+    sudo zpool import Quantum
+```
+
 
