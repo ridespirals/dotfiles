@@ -6,6 +6,9 @@
 4. manually edit to 8.8.8.8 (or something)
 5.
     sudo systemctl restart systemd-resolved.service
+6.
+    sudo /etc/init.d/network-manager restart
+
 
 # mouse pointer speed
 Edit `/usr/share/X11/xorg.conf.d/40-libinput.conf`
