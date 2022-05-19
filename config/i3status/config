@@ -76,5 +76,5 @@ load {
 }
 
 tztime local {
-  format = "🗓️ %Y-%m-%d 🕗 %H:%M"
+  format = "🗓️%A, %Y-%m-%d 🕗 %H:%M"
 }
