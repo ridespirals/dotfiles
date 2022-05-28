@@ -58,4 +58,12 @@ listed the pool just fine, and all i had to do was
     sudo zpool import Quantum
 ```
 
+# boot failure
+
+```
+    sudo lsblk
+    # find parition with os (/dev/sdb1)
+    sudo mount /dev/sdb1 /mnt
+    sudo grub-install --boot-directory=/mnt/boot /dev/sdb
+```
 
