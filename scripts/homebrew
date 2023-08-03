@@ -17,7 +17,7 @@ brew upgrade
 info 'done'
 
 info 'Upgrading casks...'
-brew upgrade --cask
+brew upgrade --casks
 info 'done'
 
 info 'Deleting old formulae...'
