@@ -78,7 +78,6 @@ export LESS=" -R "
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls='ls -AGFoh'
-alias love='/Applications/love.app/Content/MacOS/love'
 alias reloadbash='. $HOME/.bash_profile'
 # color grep output
 alias grep='grep --color=auto'
@@ -128,6 +127,7 @@ alias ds='git diff --staged'
 alias a='git add -u'
 alias ap='git add --patch'
 alias ai='git add --interactive'
+alias rp='git reset --patch'
 alias cm='git commit --verbose --message'
 alias amend='git commit --amend --no-edit'
 alias cma='git commit --amend'
