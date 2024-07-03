@@ -46,7 +46,6 @@ PLUGINS=(
     "junegunn/fzf"
     "junegunn/fzf.vim"
     "kburdett/vim-nuuid"
-    "OrangeT/vim-csharp"
     "mattn/emmet-vim"
     "mileszs/ack.vim"
     "pangloss/vim-javascript"
