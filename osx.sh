@@ -4,23 +4,6 @@ blue=$(tput setaf 4)
 green=$(tput setaf 2)
 normal=$(tput sgr0)
 
-# disable hibernate (faster sleeps)
-sudo pmset -a hibernatemode 0
-# can then "sudo rm /var/vm/sleepimage" to save space
-
-# disable Sudden Motion Sensor (for SSD-only systems)
-sudo pmset -a sms 0
-
-# enable three-finger drag
-defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerSwipeGesture -int 1
-
-# set default screenshot location
-screenshots="Documents/Screenshots"
-if [ ! -d "$HOME/$screenshots" ]
-then
-    mkdir -p "$HOME/$screenshots"
-    defaults write com.apple.screencapture location "$HOME/$screenshots"
-fi
 
 # dotfiles dir. maybe find a better way to do this?
 DOTFILES="${HOME}/source/dotfiles"
