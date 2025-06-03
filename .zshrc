@@ -181,3 +181,4 @@ rmd() {
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.profile ] && source ~/.profile

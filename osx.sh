@@ -16,6 +16,7 @@ FILES=(
     ".vimrc.commands"
     ".gitconfig"
     ".tigrc"
+    ".profile"
 )
 for ITEM in ${!FILES[*]}
 do

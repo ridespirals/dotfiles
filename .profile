@@ -23,5 +23,14 @@ fi
 
 # xinput set-prop 11 "libinput Accel Speed" -0.65
 
-# make caps lock escape
-setxkbmap -option caps:escape
+if command -v setxkbmap &> /dev/null; then
+    # make caps lock escape (linux)
+    setxkbmap -option caps:escape
+fi
+
+# autodesk stuff
+export cypress_adsk_account_server="https://accounts-staging.autodesk.com"
+export cypress_username="nifi.e2e.test.003@ssttest.net"
+export cypress_password="\$2y\$10\$p*No9AAC%D6Hjm.Uga_b47BnPNlFj_xeAkVcd9_%2"
+
+alias python="/opt/homebrew/bin/python3"
