@@ -4,7 +4,6 @@ blue=$(tput setaf 4)
 green=$(tput setaf 2)
 normal=$(tput sgr0)
 
-
 # dotfiles dir. maybe find a better way to do this?
 DOTFILES="${HOME}/source/dotfiles"
 
@@ -73,4 +72,10 @@ fi
 #   UseKeychain yes
 #   IdentityFile ~/.ssh/id_rsa
 # ssh-add -K ~/.ssh/id_rsa
+
+# now install homebrew and basic packages
+# - if there was a way to request this from brew.sh, that would be cool (TODO)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+brew install fzf git ag nvm tig vim tree wget dropbox fork iterm2 keepassxc steam vlc qlmarkdown
 
