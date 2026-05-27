@@ -51,3 +51,5 @@
 	insteadOf = https://git.heroku.com/
 [rebase]
 	autoSquash = true
+[init]
+	defaultBranch = main
