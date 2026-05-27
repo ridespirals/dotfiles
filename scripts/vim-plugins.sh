@@ -37,6 +37,7 @@ DIR="$HOME/.vim/bundle"
 PLUGINS=(
     "ajh17/VimCompletesMe"
     "AndrewRadev/splitjoin.vim"
+    "dense-analysis/ale"
     "dracula/vim"
     "editorconfig/editorconfig-vim"
     "ervandew/supertab"
@@ -61,7 +62,6 @@ PLUGINS=(
     "vim-airline/vim-airline"
     "vim-airline/vim-airline-themes"
     "vim-scripts/dbext.vim"
-    "vim-syntastic/syntastic"
 )
 
 for P in ${!PLUGINS[*]}
