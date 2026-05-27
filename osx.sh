@@ -1,8 +1,17 @@
+#!/usr/bin/env bash
+
+# Initial setup script for macos
+# - create environment variables $DOTFILES for use in other places/scripts
+# - create symlinks to all personal dotfiles
+# - set up custom updater script to be in $PATH
+
 # logging colors
 bold=$(tput bold)
+light=$(tput setaf 8)
 blue=$(tput setaf 4)
 green=$(tput setaf 2)
 normal=$(tput sgr0)
+cyan=$(tput setaf 14)
 
 # dotfiles dir. maybe find a better way to do this?
 DOTFILES="${HOME}/source/dotfiles"
@@ -77,5 +86,15 @@ fi
 # - if there was a way to request this from brew.sh, that would be cool (TODO)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew install fzf git ag nvm tig vim tree wget dropbox fork iterm2 keepassxc steam vlc qlmarkdown
+brew install fzf git ag jj nvm tig vim tree wget dropbox fork iterm2 keepassxc steam vlc qlmarkdown
 
+echo
+echo "${bold}${blue}macos setup completed. remaining tasks${normal}"
+echo "💠 install ${green}${bold}nvm${normal} ${light}(do not install node through brew)${normal}"
+echo "  $ ${cyan}curl -o- https://githubusercontent.com | bash${normal}"
+echo "  $ ${cyan}nvm install node${normal} ${light}# alias for latest${normal}"
+echo "  $ ${cyan}nvm alias default node${normal} ${light}# should set default for all terminals${normal}"
+echo
+echo "💠 install ${green}${bold}bun${normal}"
+echo "  \$${cyan} curl -fsSL https://bun.sh/install | bash${normal}"
+echo
