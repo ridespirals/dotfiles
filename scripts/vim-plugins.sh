@@ -61,6 +61,7 @@ PLUGINS=(
     "vim-airline/vim-airline"
     "vim-airline/vim-airline-themes"
     "vim-scripts/dbext.vim"
+    "wuelnerdotexe/vim-astro"
 )
 
 for P in ${!PLUGINS[*]}
