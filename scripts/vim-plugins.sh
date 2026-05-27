@@ -43,7 +43,6 @@ PLUGINS=(
     "ervandew/supertab"
     "etdev/vim-hexcolor"
     "fatih/vim-go"
-    "itmammoth/doorboy.vim"
     "junegunn/fzf"
     "junegunn/fzf.vim"
     "kburdett/vim-nuuid"
