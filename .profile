@@ -28,9 +28,5 @@ if command -v setxkbmap &> /dev/null; then
     setxkbmap -option caps:escape
 fi
 
-# autodesk stuff
-export cypress_adsk_account_server="https://accounts-staging.autodesk.com"
-export cypress_username="nifi.e2e.test.003@ssttest.net"
-export cypress_password="\$2y\$10\$p*No9AAC%D6Hjm.Uga_b47BnPNlFj_xeAkVcd9_%2"
-
 alias python="/opt/homebrew/bin/python3"
+
