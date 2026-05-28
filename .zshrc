@@ -5,8 +5,10 @@ export DOTFILES="$HOME/source/dotfiles"
 export VS="$HOME/.vim-sessions"
 export GOPATH="$HOME/Source/go"
 
+USERNAME=$(whoami)
+
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/johnvarga/.oh-my-zsh
+export ZSH=/Users/$USERNAME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -188,7 +190,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # bun completions
-[ -s "/Users/johnvarga/.bun/_bun" ] && source "/Users/johnvarga/.bun/_bun"
+[ -s "/Users/$USERNAME/.bun/_bun" ] && source "/Users/$USERNAME/.bun/_bun"
 
 # bun setup
 export BUN_INSTALL="$HOME/.bun"
