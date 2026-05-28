@@ -13,6 +13,16 @@ green=$(tput setaf 2)
 normal=$(tput sgr0)
 cyan=$(tput setaf 14)
 
+# check if homebrew is installed first
+if command -v brew >/dev/null 2>&1; then
+    : # do nothing, brew is ready
+else
+    echo "💠 Homebrew not installed."
+    echo "  $ ${cyan}/bin/bash -c \"\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"${normal}"
+    exit 1
+fi
+
+
 # dotfiles dir. maybe find a better way to do this?
 DOTFILES="${HOME}/source/dotfiles"
 
