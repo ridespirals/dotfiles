@@ -12,8 +12,11 @@ function! QuickFixOpenAll()
         let s:prev_val = s:curr_val
     endfor
 endfunction
-
 command! QuickFixOpenAll call QuickFixOpenAll()
+
+" close other buffers
+command! CloseOtherBuffers silent! execute "%bd|e#|bd#"
+cnoreabbrev others CloseOtherBuffers
 
 " format json
 com! FormatJson %!jj -p
