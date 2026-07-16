@@ -214,10 +214,8 @@ nnoremap <silent> ,T :!tig<CR><C-l>
 nmap <Leader>f <Plug>(Prettier)
 vnoremap <Leader>p :PrettierFragment<CR>
 
-" autoformat on save for visualize only (so hacky i know but i'm not ready to
-" do it to everything)
-let g:prettier#autoFormat = 0
-autocmd BufWritePre */unifi-repo/*.{js,jsx,css,html} PrettierAsync
+" disable prettier format on save
+let g:prettier#autoformat = 0
 
 " format sql on save
 let g:ale_fixers = {'sql': ['pgformatter']}
