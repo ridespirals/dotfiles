@@ -219,6 +219,9 @@ vnoremap <Leader>p :PrettierFragment<CR>
 let g:prettier#autoFormat = 0
 autocmd BufWritePre */unifi-repo/*.{js,jsx,css,html} PrettierAsync
 
+" format sql on save
+let g:ale_fixers = {'sql': ['pgformatter']}
+let g:ale_fix_on_save = 1
 
 " load custom commands from separate file
 if filereadable(expand("~/.vimrc.commands"))

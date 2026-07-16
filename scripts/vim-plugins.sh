@@ -51,6 +51,7 @@ PLUGINS=(
     "mileszs/ack.vim"
     "pangloss/vim-javascript"
     "prettier/vim-prettier"
+    "shmup/vim-sql-syntax"
     "tpope/vim-characterize"
     "tpope/vim-commentary"
     "tpope/vim-dotenv"
