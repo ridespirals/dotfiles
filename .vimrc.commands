@@ -19,7 +19,7 @@ command! CloseOtherBuffers silent! execute "%bd|e#|bd#"
 cnoreabbrev others CloseOtherBuffers
 
 " format json
-com! FormatJson %!jj -p
+command! FormatJson %!jj -p
 
 " escape html
 nnoremap <Leader>h :'[,']call HtmlEscape()<CR>
