@@ -195,3 +195,8 @@ export NVM_DIR="$HOME/.nvm"
 # bun setup
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# direnv: per-directory environment (allows creating easy-to-type "commands" in directories)
+# initially used to create simple "run" and "check" commands for a lua love project, instead of having to type
+# "love ." or "lua tests/run.lua", i can just use those single worlds. cool tool i wanna use more, so making this permanent
+eval "$(direnv hook zsh)"
