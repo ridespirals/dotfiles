@@ -101,3 +101,42 @@ function! Rename(name, bang)
         echoerr v:errmsg
     endif
 endfunction
+
+" Make gS (Split from SplitJoin) work correctly on C blocks
+function! SplitCBlock()
+    let l:line = getline('.')
+    " Verify the line contains both an opening and closing brace
+    if l:line =~ '{.*}'
+        " 1. Find '{', move one char right, insert a newline
+        " 2. Find '}', insert a newline right before it
+        execute "normal! f{la\<CR>\<Esc>f}i\<CR>\<Esc>"
+        " Move up to the original 'if' line and re-indent all 3 lines
+        execute "normal! kk==j==j=="
+        " Leave the cursor on the newly created inner line, auto-indented
+        execute "normal! k$"
+    endif
+endfunction
+
+" Make gJ (Join from SplitJoin) work correctly on C blocks
+function! JoinCBlock()
+    let l:line = getline('.')
+    " Check if the current line looks like the start of an 'if' or loop block
+    if l:line =~ '{\s*$'
+        " 1. Join the current line with the inner statement line
+        " 2. Join that combined line with the closing brace line
+        execute "normal! JJ"
+        " 3. Clean up inner spacing: replace multiple spaces before the
+        " statement with a single space
+        execute "substitute/{\s\+/{\ /e"
+        " 4. Clean up trailing brace spacing: ensure a space before the
+        " closing brace
+        execute "substitute/\s\+}/\ }/e"
+        " Clear the search highlight layout from the substitutions
+        nohlsearch
+    endif
+endfunction
+
+" Bind gS for C and C++ files
+autocmd FileType c,cpp nnoremap <buffer> gS :call SplitCBlock()<CR>
+" Bind gJ for C and C++ files
+autocmd FileType c,cpp nnoremap <buffer> gJ :call JoinCBlock()<CR>
