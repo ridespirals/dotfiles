@@ -104,13 +104,17 @@ endfunction
 
 " Make gS (Split from SplitJoin) work correctly on C blocks
 function! SplitCBlock()
-    let l:line = getline('.')
-    " Verify the line contains both an opening and closing brace
-    if l:line =~ '{.*}'
-        " 1. Find '{', move one char right, insert a newline
-        " 2. Find '}', insert a newline right before it
+    " 1. Search backward to find the line containing both '{' and '}'
+    let l:target_line = search('{.*}', 'bnc')
+
+    if l:target_line > 0
+        " 2. Move cursor directly to that single-line block
+        execute ":" . l:target_line
+        " 3. Run the splitting sequence and re-indent
+        " 3a. Find '{', move one char right, insert a newline
+        " 3b. Find '}', insert a newline right before it
         execute "normal! f{la\<CR>\<Esc>f}i\<CR>\<Esc>"
-        " Move up to the original 'if' line and re-indent all 3 lines
+        " 4. Move up to the original 'if' line and re-indent all 3 lines
         execute "normal! kk==j==j=="
         " Leave the cursor on the newly created inner line, auto-indented
         execute "normal! k$"
@@ -119,19 +123,19 @@ endfunction
 
 " Make gJ (Join from SplitJoin) work correctly on C blocks
 function! JoinCBlock()
-    let l:line = getline('.')
-    " Check if the current line looks like the start of an 'if' or loop block
-    if l:line =~ '{\s*$'
-        " 1. Join the current line with the inner statement line
-        " 2. Join that combined line with the closing brace line
+    " 1. Search backward to find the block header line ending with '{'
+    " The 'b' flag searches backward; 'c' accepts a match on the current line.
+    let l:target_line = search('{\s*$', 'bnc')
+
+    if l:target_line > 0
+        " 2. Move the cursor directly to that header line
+        execute ":" . l:target_line
+        " 3. Pull the lines up together
         execute "normal! JJ"
-        " 3. Clean up inner spacing: replace multiple spaces before the
-        " statement with a single space
+        " 4. Clean up spacing
         execute "substitute/{\s\+/{\ /e"
-        " 4. Clean up trailing brace spacing: ensure a space before the
-        " closing brace
         execute "substitute/\s\+}/\ }/e"
-        " Clear the search highlight layout from the substitutions
+        " Clear regex highlights
         nohlsearch
     endif
 endfunction
